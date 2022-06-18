@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-white-50
+}
+
+h2 {
+    @apply text-gray-300 max-w-xs m-auto font-merriweather font-medium text-2xl text-center
+}
