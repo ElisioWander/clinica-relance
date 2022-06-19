@@ -20,7 +20,7 @@ export function Feedback() {
   const data: FeedbackData = feedback.feedback;
 
   return (
-    <div className="w-full flex flex-col items-center py-14 my-14 bg-white-300 ">
+    <div className="w-full flex flex-col items-center py-14 bg-white-50 ">
       <h2 className="mb-4">Feedback</h2>
       <div className="w-10 h-1 bg-gray-600 rounded-t-sm "></div>
       <Swiper
@@ -36,7 +36,7 @@ export function Feedback() {
         {data &&
           data.map((item) => (
             <SwiperSlide key={item.id} className="flex flex-col items-center justify-center " >
-              <div className="w-4/5 h-4/5 p-5  flex flex-col items-center justify-around rounded-sm shadow-md  ">
+              <div className="w-4/5 h-4/5 p-5  flex flex-col items-center justify-around rounded-sm shadow-lg  ">
                 <div className="w-full md:w-4/5 flex bg-green-300 items-center justify-center gap-4 p-5 md:p-12 rounded-lg ">
                   <div><Quotes className="rotate-180 text-green-100 hidden sm:block sm:w-8 sm:h-8 md:w-12 md:h-12 " /></div>
                   <p className="text-gray-700 text-xs sm:text-sm font-poppins ">

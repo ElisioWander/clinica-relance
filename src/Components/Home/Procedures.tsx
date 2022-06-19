@@ -18,8 +18,8 @@ export function Procedures() {
   const data: ProceduresData = procedures.procedures;
 
   return (
-    <div className="w-full flex flex-col items-center p-4">
-      <h2 className="mt-14" >Procedimentos</h2>
+    <div className="w-full flex flex-col items-center p-4 py-14 bg-white-400 ">
+      <h2 className="" >Procedimentos</h2>
       <div className="w-10 h-1 bg-gray-600 mt-4 rounded-t-sm "></div>
       <Swiper
         modules={[Pagination, Navigation, Autoplay]}
