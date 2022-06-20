@@ -2,18 +2,18 @@
   "mostRequiredSection": [
     {
       "id": "1",
-      "img": "https://media.istockphoto.com/photos/beautician-is-applying-permanent-make-up-picture-id1345987858?s=612x612",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristiquelorem risus, ac porta ipsum auctor interdum."
+      "img": "https://media.istockphoto.com/photos/man-receiving-laser-hair-removal-treatment-picture-id518473170?s=2048x2048",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ipsum dolor sit amet, consectetur adipiscing elit.ipsum dolor sit amet, consectetur adipiscing elit. Proin tristiquelorem risus, ac porta ipsum auctor interdum."
     },
     {
       "id": "2",
-      "img": "https://media.istockphoto.com/photos/beautician-is-applying-permanent-make-up-picture-id1345987858?s=612x612",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristiquelorem risus, ac porta ipsum auctor interdum."
+      "img": "https://media.istockphoto.com/photos/man-receiving-laser-hair-removal-treatment-picture-id518473170?s=2048x2048",
+      "content": " dolor sit amet, consectetur adipiscing elit. Proin tristiquelorem risus, ac porta ipsum auctor interdum."
     },
     {
       "id": "3",
-      "img": "https://media.istockphoto.com/photos/beautician-is-applying-permanent-make-up-picture-id1345987858?s=612x612",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristiquelorem risus, ac porta ipsum auctor interdum."
+      "img": "https://media.istockphoto.com/photos/man-receiving-laser-hair-removal-treatment-picture-id518473170?s=2048x2048",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ipsum dolor sit amet, consectetur adipiscing elit.ipsum dolor sit amet, consectetur adipiscing elit. Proin tristiquelorem risus, ac porta ipsum auctor interdum."
     }
   ],
   "procedures": [
@@ -66,6 +66,33 @@
       "img": "https://images.unsplash.com/photo-1496440737103-cd596325d314?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
       "content": "porta ipsum auctor interdum porta ipsum auctor interdum.",
       "name": "Yasmin Gomes"
+    }
+  ],
+  "Introduction": [
+    {
+      "id": "1",
+      "img": "https://media.istockphoto.com/photos/beauty-portrait-picture-id452364031?s=2048x2048",
+      "content": "porta ipsum auctor interdum porta ipsum auctor interdum."
+    },
+    {
+      "id": "2",
+      "img": "/images/microblading-1.jpg",
+      "content": "porta ipsum auctor interdum porta ipsum auctor interdum."
+    },
+    {
+      "id": "3",
+      "img": "/images/microlips-1.jpg",
+      "content": "porta ipsum auctor interdum porta ipsum auctor interdum."
+    },
+    {
+      "id": "4",
+      "img": "https://media.istockphoto.com/photos/man-receiving-laser-hair-removal-treatment-picture-id518473170?s=2048x2048",
+      "content": "porta ipsum auctor interdum porta ipsum auctor interdum."
+    },
+    {
+      "id": "5",
+      "img": "https://media.istockphoto.com/photos/woman-having-hair-removal-laser-epilation-on-underarm-areas-hair-picture-id1139106582?s=2048x2048",
+      "content": "porta ipsum auctor interdum porta ipsum auctor interdum."
     }
   ]
 }

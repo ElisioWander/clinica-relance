@@ -39,7 +39,7 @@ export function Feedback() {
               <div className="w-4/5 h-4/5 p-5  flex flex-col items-center justify-around rounded-sm shadow-lg  ">
                 <div className="w-full md:w-4/5 flex bg-green-300 items-center justify-center gap-4 p-5 md:p-12 rounded-lg ">
                   <div><Quotes className="rotate-180 text-green-100 hidden sm:block sm:w-8 sm:h-8 md:w-12 md:h-12 " /></div>
-                  <p className="text-gray-700 text-xs sm:text-sm font-poppins ">
+                  <p className="text-zinc-700 text-xs sm:text-sm font-poppins ">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eveniet velit molestiae illo. Sint vero eius voluptate hic temporibus reprehenderit, laboriosam adipisci esse totam aliquid fugiat natus ipsa recusandae rem!
                   </p>
                 </div>
@@ -52,8 +52,8 @@ export function Feedback() {
                     />
                   </div>
 
-                  <span className="text-sm text-gray-300 font-roboto font-bold" >{item.name}</span>
-                  <span className="text-xs text-gray-700 font-roboto " >Cliente ❤</span>
+                  <span className="text-sm text-zinc-700 font-roboto font-bold" >{item.name}</span>
+                  <span className="text-xs text-zinc-500 font-roboto " >Cliente ❤</span>
                 </div>
               </div>
             </SwiperSlide>

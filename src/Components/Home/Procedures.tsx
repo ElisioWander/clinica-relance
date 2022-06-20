@@ -54,7 +54,7 @@ export function Procedures() {
                 </div>
 
                 <div className="w-full h-full flex flex-col items-center text-center justify-between pt-10 pb-8 px-2 ">
-                  <h3 className="text-gray-600 text-md font-poppins">
+                  <h3 className="text-zinc-500 text-md font-poppins">
                     {item.content}
                   </h3>
 

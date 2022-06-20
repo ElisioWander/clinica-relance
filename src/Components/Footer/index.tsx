@@ -10,7 +10,7 @@ export function Footer() {
           Av. Padre Arnaldo Jansen <br/>
           (32) 999999999
         </span>
-        <span className="text-[10px] text-center md:text-start text-gray-700 font-poppins md:absolute md:bottom-5 md:w-full md:left-0 md:flex md:justify-center " >@Copyright - Estudio Relance</span>
+        <span className="text-[10px] text-center md:text-start text-zinc-700 font-poppins md:absolute md:bottom-5 md:w-full md:left-0 md:flex md:justify-center " >@Copyright - Estudio Relance</span>
       </div>
       <div>
         <span className="md:h-60 mb-2 text-4xl md:text-6xl font-merriweather shadow-sm font-bold flex items-start  justify-center " >Relance<span className="text-green-300 ml-[1px]" >.</span></span>

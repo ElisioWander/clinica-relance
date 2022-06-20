@@ -18,7 +18,7 @@ export function OurProfessionals() {
         </div>
 
         <div className="w-full max-w-sm p-2 pt-5 pl-9 lg:flex lg:flex-col lg:items-center lg:justify-center ">
-          <p className="text-left text-sm lg:text-base text-gray-700 font-roboto leading-5 ">
+          <p className="text-left text-sm lg:text-base text-zinc-500 font-roboto leading-5 ">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit
             explicabo repellendus voluptate laudantium ipsam aperiam voluptates
             eos error doloribus inventore ipsum repudiandae, expedita nihil ea
