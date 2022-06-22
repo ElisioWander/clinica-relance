@@ -6,6 +6,16 @@ body {
     @apply bg-white-50
 }
 
+@layer {
+    .swiper-pagination-bullet-active {
+        background-color: #74D57E !important;
+   }
+
+   .swiper-button-prev, .swiper-button-next {
+        color: #555 !important;
+   }
+}
+
 h2 {
     @apply text-gray-300 m-auto font-merriweather font-medium text-2xl text-center
 }

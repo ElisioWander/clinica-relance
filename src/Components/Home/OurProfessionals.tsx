@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function OurProfessionals() {
   return (
     <div className="w-full bg-white-50 py-14 flex flex-col items-center ">
@@ -29,12 +31,13 @@ export function OurProfessionals() {
             quia voluptatem! Omnis, facilis quod.
           </p>
 
-          <a
-            href="#"
-            className="w-[130px] h-9 flex items-center justify-center text-white-100 text-base font-roboto font-semibold rounded-3xl mt-7 bg-green-300 hover:brightness-90 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white-100 "
-          >
-            Conheça elas
-          </a>
+          <Link href="/sobre" >
+            <a
+              className="w-[130px] h-10 flex items-center justify-center text-white-100 text-base font-roboto font-semibold rounded-3xl mt-7 bg-green-300 hover:brightness-90 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white-100 "
+            >
+              Conheça elas
+            </a>
+          </Link>
         </div>
       </div>
     </div>

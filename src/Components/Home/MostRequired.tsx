@@ -1,3 +1,4 @@
+import Link from "next/link";
 import mostRequerdSection from "../../../data.json";
 
 type MostRequiredData = {
@@ -21,7 +22,7 @@ export function MostRequired() {
       >
         PROCEDIMENTOS POPULARES
       </h1>
-      <div className="w-full max-w-[1080px] h-[1500px] lg:h-[440px] lg:mt-12 px-2 py-5 pt-9 flex flex-col lg:flex-row items-center justify-around " >
+      <div className="w-full max-w-[1080px] h-[1500px] lg:h-[480px] lg:mt-12 px-2 py-5 pt-9 flex flex-col lg:flex-row items-center justify-around " >
         {data &&
           data.mostRequiredSection.map((card) => (
             <a 
@@ -48,7 +49,9 @@ export function MostRequired() {
             </a>
           ))}
       </div>
-      <a href="#" className="w-32 h-9 lg:mt-5 bg-white-100 text-green-300 text-base flex items-center justify-center font-roboto font-semibold rounded-3xl py-5 hover:bg-green-300 hover:text-white-100 border-2 border-green-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white-100 transition-all " >Veja todos</a>
+      <Link href="/servicos" >
+        <a className="w-32 h-9 lg:mt-5 bg-white-100 text-green-300 text-base flex items-center justify-center font-roboto font-semibold rounded-3xl py-5 hover:bg-green-300 hover:text-white-100 border-2 border-green-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white-100 transition-all " >Veja todos</a>
+      </Link>
     </div>
   );
 }

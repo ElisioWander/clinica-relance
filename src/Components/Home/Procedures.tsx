@@ -19,7 +19,7 @@ export function Procedures() {
 
   return (
     <div className="w-full flex flex-col items-center p-4 py-14 bg-white-400 ">
-      <h2 className="" >Procedimentos</h2>
+      <h2 className="">Procedimentos</h2>
       <div className="w-10 h-1 bg-gray-600 mt-4 rounded-t-sm "></div>
       <Swiper
         modules={[Pagination, Navigation, Autoplay]}
@@ -43,29 +43,31 @@ export function Procedures() {
       >
         {data &&
           data.map((item) => (
-            <SwiperSlide key={item.id} className="flex items-center justify-center " >
-              <div className="w-11/12 h-[400px] bg-white-100 flex flex-col items-center rounded-lg shadow-md ">
-                <div className="w-full h-[190px]">
-                  <img
-                    src={item.img}
-                    alt="banner"
-                    className="w-full h-full object-cover "
-                  />
-                </div>
+            <SwiperSlide
+              key={item.id}
+              className="flex items-center justify-center "
+            >
+              <a
+                key={item.id}
+                href="/"
+                className="w-11/12 h-[420px] md:w-full lflex items-center justify-center mb-8 rounded-sm shadow-md hover:shadow-xl relative overflow-hidden transition-all "
+              >
+                <img
+                  src={item.img}
+                  alt="microderm-peeling-poster"
+                  className="w-full h-full object-cover brightness-75 hover:brightness-100 absolute transition-all duration-1000 ease-in-out trasform scale-100 hover:scale-150 "
+                />
 
-                <div className="w-full h-full flex flex-col items-center text-center justify-between pt-10 pb-8 px-2 ">
-                  <h3 className="text-zinc-500 text-md font-poppins">
-                    {item.content}
+                <div className="w-full flex flex-col items-center absolute bottom-0 p-5 bg-white-100 ">
+                  <h3 className="mb-2 text-gray-700 text-lg font-poppins font-semibold ">
+                    Título
                   </h3>
 
-                  <a
-                    href="#"
-                    className="w-[124px] h-9 flex items-center justify-center bg-green-300 text-white-100 text-sm font-semibold font-roboto rounded-3xl hover:brightness-90 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white-100 "
-                  >
-                    Saiba mais
-                  </a>
+                  <p className="font-roboto font-light text-zinc-500 text-sm leading-5 text-center ">
+                    {item.content}
+                  </p>
                 </div>
-              </div>
+              </a>
             </SwiperSlide>
           ))}
       </Swiper>
