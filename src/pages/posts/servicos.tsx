@@ -1,3 +1,4 @@
+import Link from "next/link";
 import data from "../../../data.json";
 
 export default function Services() {
@@ -11,30 +12,31 @@ export default function Services() {
       >
         PROCEDIMENTOS ESTÉTICOS
       </h1>
-      
+
       <main className="w-full max-w-[1080px] m-auto py-20 md:px-5 flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 items-center justify-center animate-goTop ">
         {data.procedures.map((item) => (
-          <a
-            key={item.id}
-            href={`/posts/servicos/${item.id}`}
-            className="w-11/12 h-[420px] md:w-full lflex items-center justify-center mb-8 rounded-sm shadow-md hover:shadow-xl relative overflow-hidden transition-all "
-          >
-            <img
-              src={item.img}
-              alt="microderm-peeling-poster"
-              className="w-full h-full object-cover brightness-75 hover:brightness-100 absolute transition-all duration-1000 ease-in-out trasform scale-100 hover:scale-150 "
-            />
+          <Link href={`/posts/${item.id}`}>
+            <a
+              key={item.id}
+              className="w-11/12 h-[420px] md:w-full flex items-center justify-center mb-8 rounded-sm shadow-md hover:shadow-xl relative overflow-hidden transition-all "
+            >
+              <img
+                src={item.img}
+                alt="microderm-peeling-poster"
+                className="w-full h-full object-cover brightness-75 hover:brightness-100 absolute transition-all duration-1000 ease-in-out trasform scale-100 hover:scale-150 "
+              />
 
-            <div className="w-full flex flex-col items-center absolute bottom-0 p-5 bg-white-100 ">
-              <h3 className="mb-2 text-gray-700 text-lg font-poppins font-semibold ">
-                Título
-              </h3>
+              <div className="w-full flex flex-col items-center absolute bottom-0 p-5 bg-white-100 ">
+                <h3 className="mb-2 text-gray-700 text-lg font-poppins font-semibold ">
+                  Título
+                </h3>
 
-              <p className="font-roboto font-light text-zinc-500 text-sm leading-5 text-center ">
-                {item.content}
-              </p>
-            </div>
-          </a>
+                <p className="font-roboto font-light text-zinc-500 text-sm leading-5 text-center ">
+                  {item.content}
+                </p>
+              </div>
+            </a>
+          </Link>
         ))}
       </main>
     </div>
