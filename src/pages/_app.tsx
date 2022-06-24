@@ -1,17 +1,19 @@
 import type { AppProps } from 'next/app'
 import { Footer } from '../Components/Footer'
 import { Header } from '../Components/Header'
+import { PrismicProvider } from '@prismicio/react'
+import { client } from '../services/prismic'
 
 import '../global.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
+    <PrismicProvider client={client} >
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </PrismicProvider>
     </>
   )
 }
-
-export default MyApp

@@ -19,11 +19,16 @@ module.exports = {
           '0%': { transform: 'translateY(200px)' },
           '100%': { transform: 'traslateX(0)' }
         },
+        goTopImage: {
+          '0%': { transform: 'translateY(400px)' },
+          '100%': { transform: 'traslateX(0)' }
+        }
       },
       animation: {
         goBack: 'goBack 0.8s',
         goAhead: 'goAhead 0.8s',
-        goTop: 'goTop 0.8s'
+        goTop: 'goTop 0.8s',
+        goTopImage: 'goTopImage 1s'
       },
       colors: {
         gray: {

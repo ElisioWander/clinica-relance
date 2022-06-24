@@ -1,21 +1,76 @@
+import { GetStaticProps } from "next";
 import { Feedback } from "../Components/Home/Feedback";
 import { Introduction } from "../Components/Home/Introduction";
-import { MostRequired } from "../Components/Home/MostRequired";
+import { MostPopulars } from "../Components/Home/MostPopulars";
 import { OurProfessionals } from "../Components/Home/OurProfessionals";
 import { Procedures } from "../Components/Home/Procedures";
+import { client } from "../services/prismic";
 
-export default function Home() {
+import * as prismicH from '@prismicio/helpers'
+
+type PopularsData = Array<{
+  slug: string;
+  title: string;
+  image: string;
+  content: string;
+}>
+
+type ProceduresData = {
+  slug: string;
+  title: string;
+  image: string;
+  content: string;
+}
+
+interface HomeProps {
+  populars: PopularsData,
+  procedures: ProceduresData[]
+}
+
+export default function Home({ populars, procedures }: HomeProps) {
   return (
     <div className="w-full box-border bg-white-50 flex flex-col items-center ">
       <Introduction />
 
-      <MostRequired />
+      <MostPopulars populars={populars} />
 
       <OurProfessionals />
 
-      <Procedures />
+      <Procedures procedures={procedures} />
 
       <Feedback />
     </div>
   );
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allPopulars = await client.getAllByType('popular')
+  const allProcedures = await client.getAllByType('procedure')
+
+  const populars = allPopulars.map(popular => {
+    return {
+      slug: popular.uid,
+      title: prismicH.asText(popular.data.title),
+      image: popular.data.image.url,
+      content: prismicH.asText(popular.data.content)
+    }
+  })
+
+  const procedures = allProcedures.map(procedure => {
+    return {
+      slug: procedure.uid,
+      title: prismicH.asText(procedure.data.title),
+      image: procedure.data.image.url,
+      content: prismicH.asText(procedure.data.content)?.substring(0, 100)
+    }
+  })
+
+  console.log(procedures)
+
+  return {
+    props: {
+      populars,
+      procedures,
+    }
+  }
 }

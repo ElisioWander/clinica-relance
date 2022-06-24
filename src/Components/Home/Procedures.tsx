@@ -1,5 +1,4 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import procedures from "../../../data.json";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -8,15 +7,16 @@ import "swiper/css/autoplay";
 
 import { Pagination, Navigation, Autoplay } from "swiper";
 
-type ProceduresData = Array<{
-  id: string;
-  img: string;
-  content: string;
-}>;
+interface ProceduresProps {
+  procedures: Array<{
+    slug: string;
+    title: string;
+    image: string;
+    content: string;
+  }>
+}
 
-export function Procedures() {
-  const data: ProceduresData = procedures.procedures;
-
+export function Procedures({ procedures }: ProceduresProps) {
   return (
     <div className="w-full flex flex-col items-center p-4 py-14 bg-white-400 ">
       <h2 className="">Procedimentos</h2>
@@ -41,19 +41,18 @@ export function Procedures() {
           },
         }}
       >
-        {data &&
-          data.map((item) => (
+        {procedures &&
+          procedures.map((item) => (
             <SwiperSlide
-              key={item.id}
+              key={item.slug}
               className="flex items-center justify-center "
             >
               <a
-                key={item.id}
                 href="/"
                 className="w-11/12 h-[420px] md:w-full lflex items-center justify-center mb-8 rounded-sm shadow-md hover:shadow-xl relative overflow-hidden transition-all "
               >
                 <img
-                  src={item.img}
+                  src={item.image}
                   alt="microderm-peeling-poster"
                   className="w-full h-full object-cover brightness-75 hover:brightness-100 absolute transition-all duration-1000 ease-in-out trasform scale-100 hover:scale-150 "
                 />
@@ -63,7 +62,7 @@ export function Procedures() {
                     Título
                   </h3>
 
-                  <p className="font-roboto font-light text-zinc-500 text-sm leading-5 text-center ">
+                  <p className="font-roboto font-light relative text-zinc-500 text-sm leading-5 text-center after:content-['...'] after:text-zinc-500 ">
                     {item.content}
                   </p>
                 </div>

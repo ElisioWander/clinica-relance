@@ -30,7 +30,7 @@ export function Introduction() {
       >
         { data &&
           data.map(item => (
-            <SwiperSlide key={item.id}>
+            <SwiperSlide key={item.id} >
               <section className="w-full h-full " >
                 <img
                   className="w-full h-full object-cover opacity-80 " 

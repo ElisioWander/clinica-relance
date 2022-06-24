@@ -30,7 +30,7 @@ export function Header() {
         </Link>
         <Link href="/posts/servicos" >
           <a className={`h-20 inline-block leading-[80px] ml-7 relative hover:brightness-0 text-gray-300 text-sm lg:text-[16px] font-poppins 
-            ${asPath == "/post/servicos"
+            ${asPath == "/posts/servicos"
               ? "font-semibold after:content-[''] after:absolute after:w-full after:h-[3px] after:bg-green-300 after:bottom-0 after:left-0 after:rounded-t-sm "
               : "text-gray-300"}`}
           >
