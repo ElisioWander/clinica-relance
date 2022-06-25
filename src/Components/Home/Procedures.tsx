@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
 import { Pagination, Navigation, Autoplay } from "swiper";
+import Link from "next/link";
 
 interface ProceduresProps {
   procedures: Array<{
@@ -47,26 +48,27 @@ export function Procedures({ procedures }: ProceduresProps) {
               key={item.slug}
               className="flex items-center justify-center "
             >
-              <a
-                href="/"
-                className="w-11/12 h-[420px] md:w-full lflex items-center justify-center mb-8 rounded-sm shadow-md hover:shadow-xl relative overflow-hidden transition-all "
-              >
-                <img
-                  src={item.image}
-                  alt="microderm-peeling-poster"
-                  className="w-full h-full object-cover brightness-75 hover:brightness-100 absolute transition-all duration-1000 ease-in-out trasform scale-100 hover:scale-150 "
-                />
+              <Link href={`/posts/${item.slug}`}>
+                <a
+                  className="w-11/12 h-[420px] md:w-full lflex items-center justify-center mb-8 rounded-sm shadow-md hover:shadow-xl relative overflow-hidden transition-all "
+                >
+                  <img
+                    src={item.image}
+                    alt="microderm-peeling-poster"
+                    className="w-full h-full object-cover brightness-75 hover:brightness-100 absolute transition-all duration-1000 ease-in-out trasform scale-100 hover:scale-150 "
+                  />
 
-                <div className="w-full flex flex-col items-center absolute bottom-0 p-5 bg-white-100 ">
-                  <h3 className="mb-2 text-gray-700 text-lg font-poppins font-semibold ">
-                    Título
-                  </h3>
+                  <div className="w-full flex flex-col items-center absolute bottom-0 p-5 bg-white-100 ">
+                    <h3 className="mb-2 text-gray-700 text-lg font-poppins font-semibold ">
+                      {item.title}
+                    </h3>
 
-                  <p className="font-roboto font-light relative text-zinc-500 text-sm leading-5 text-center after:content-['...'] after:text-zinc-500 ">
-                    {item.content}
-                  </p>
-                </div>
-              </a>
+                    <p className="font-roboto font-light relative text-zinc-500 text-sm leading-5 text-center ">
+                      {item.content}
+                    </p>
+                  </div>
+                </a>
+              </Link>
             </SwiperSlide>
           ))}
       </Swiper>

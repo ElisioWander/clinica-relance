@@ -1,34 +1,40 @@
+import { useSinglePrismicDocument } from "@prismicio/react";
+import * as prismicH from '@prismicio/helpers'
 import Link from "next/link";
 
 export function OurProfessionals() {
+  let [document] = useSinglePrismicDocument("homesummary")
+    
+  const summary = {
+    slug: document?.uid,
+    content: prismicH.asText(document?.data.content)?.substring(0, 500) + "...",
+    image: document?.data.image.url
+  }
+
   return (
     <div className="w-full bg-white-50 py-14 flex flex-col items-center ">
       <h2>Nossas Profissionais</h2>
       <div className="w-10 h-1 bg-gray-600 mt-4 mb-9 rounded-t-sm "></div>
       <div className="md:flex transition-all ">
-        <div className="lg:h-[400px] lg:w-[400px] flex items-center justify-center  ">
+        <div
+          className="lg:h-[400px] lg:w-[400px] flex items-center justify-center "
+          style={{
+            'backgroundImage': 'url("/images/ellipse-1.svg")',
+            'backgroundSize': 'contain',
+            'backgroundRepeat': 'no-repeat',
+            'backgroundPosition': 'center'
+          }}
+        >
           <img
-            src="/images/ellipse-1.svg"
-            alt="shape under the profile photo"
-            className="lg:h-full lg:w-full"
-          />
-          <img
-            src="/images/ellipse-with-photo-1.svg"
+            src={summary.image}
             alt="shape with profile photo inside"
-            className="absolute lg:w-[400px] lg:h-[400px] "
+            className="w-full h-full "
           />
         </div>
 
         <div className="w-full max-w-sm p-2 pt-5 pl-9 lg:flex lg:flex-col lg:items-center lg:justify-center ">
           <p className="text-left text-sm lg:text-base text-zinc-500 font-roboto leading-5 ">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit
-            explicabo repellendus voluptate laudantium ipsam aperiam voluptates
-            eos error doloribus inventore ipsum repudiandae, expedita nihil ea
-            quia voluptatem! Omnis, facilis quod.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit
-            explicabo repellendus voluptate laudantium ipsam aperiam voluptates
-            eos error doloribus inventore ipsum repudiandae, expedita nihil ea
-            quia voluptatem! Omnis, facilis quod.
+            {summary.content}
           </p>
 
           <Link href="/sobre" >

@@ -10,6 +10,7 @@ import "swiper/css/autoplay";
 
 import { Pagination, Navigation, Autoplay } from "swiper";
 import { useAllPrismicDocumentsByType } from "@prismicio/react";
+import { useEffect, useState } from "react";
 
 export function Feedback() {
   const [feedbacks] = useAllPrismicDocumentsByType('feedback')
