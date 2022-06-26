@@ -22,13 +22,18 @@ module.exports = {
         goTopImage: {
           '0%': { transform: 'translateY(400px)' },
           '100%': { transform: 'traslateX(0)' }
+        },
+        goVisible: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' }
         }
       },
       animation: {
         goBack: 'goBack 0.8s',
         goAhead: 'goAhead 0.8s',
         goTop: 'goTop 0.8s',
-        goTopImage: 'goTopImage 1s'
+        goTopImage: 'goTopImage 1s',
+        goVisible: 'goVisible 0.3s '
       },
       colors: {
         gray: {

@@ -25,8 +25,8 @@ export function Sidebar() {
                     <a>Sobre</a>
                   </Link>
                 </li>
-                <li className={`w-full p-3 text-lg text-gray-300 hover:text-zinc-50 font-poppins cursor-pointer hover:bg-green-100 transition-all hover:text-xl ${asPath === "/servicos" ? "font-semibold bg-green-100  text-zinc-50 hover:text-lg " : "bg-transparent"} `}>
-                  <Link href="/servicos" >
+                <li className={`w-full p-3 text-lg text-gray-300 hover:text-zinc-50 font-poppins cursor-pointer hover:bg-green-100 transition-all hover:text-xl ${asPath === "/posts" ? "font-semibold bg-green-100  text-zinc-50 hover:text-lg " : "bg-transparent"} `}>
+                  <Link href="/posts" >
                     <a>Serviços</a>
                   </Link>
                 </li>
