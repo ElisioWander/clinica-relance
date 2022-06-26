@@ -46,7 +46,7 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
             </div>
           </div>
 
-          <div className="p-5 pt-0 md:mt-2 ">
+          <div className="p-7 pt-0 md:mt-2 ">
             <span className="text-sm text-green-300 uppercase font-bold font-poppins ">
               {tamyrisSummary.name}
             </span>
@@ -76,7 +76,7 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
             </div>
           </div>
 
-          <div className="p-5 pt-0 md:mt-2 ">
+          <div className="p-7 pt-0 md:mt-2 ">
             <span className="text-sm text-green-300 uppercase font-bold font-poppins ">
               {amandaSummary.name}
             </span>

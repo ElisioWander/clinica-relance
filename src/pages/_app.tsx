@@ -5,15 +5,20 @@ import { PrismicProvider } from '@prismicio/react'
 import { client } from '../services/prismic'
 
 import '../global.css'
+import { Sidebar } from '../Components/Sidebar'
+import { SidebarContextProvider } from '../context/sidebarContext'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-    <PrismicProvider client={client} >
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
-      </PrismicProvider>
+    <SidebarContextProvider>
+      <PrismicProvider client={client} >
+          <Sidebar  />
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </PrismicProvider>
+      </SidebarContextProvider>
     </>
   )
 }

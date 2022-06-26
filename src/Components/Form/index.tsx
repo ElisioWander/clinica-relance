@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { api } from "../../services/axios";
 import { Loading } from "../Loading";
 
 export function Form() {
@@ -7,23 +8,24 @@ export function Form() {
   const [email, setEmail] = useState("");
   const [isSendingMessage, setIsSendingMessage] = useState(false);
 
-  function handleSubmitMessage(e: FormEvent) {
+  async function handleSubmitMessage(e: FormEvent) {
     e.preventDefault();
 
     setIsSendingMessage(true);
-    const data = {
+
+    await api.post("message", {
       name,
       email,
       comment
-    }
-    setIsSendingMessage(false)
+    })
 
+    setIsSendingMessage(false)
   }
 
   return (
     <form
       onSubmit={handleSubmitMessage}
-      className="w-full h-[420px] p-5 flex flex-col justify-center "
+      className="w-full h-[420px] p-5 flex flex-col justify-center animate-goBack "
     >
       <span className="mb-4 text-zinc-400 font-semibold text-md font-roboto block  ">
         Deixe sua mensagem
@@ -42,7 +44,6 @@ export function Form() {
           onChange={(e) => setEmail(e.target.value)}
         />
         <textarea
-          name=""
           className="mb-5 p-4 min-h-[112px] text-zinc-800 text-sm rounded-md placeholder:text-sm bg-zinc-300 focus:border-1 focus:ring-green-100 focus:ring-1 focus:outline-none resize-none "
           placeholder="Digite sua mensagem aqui"
           onChange={(e) => setComment(e.target.value)}
