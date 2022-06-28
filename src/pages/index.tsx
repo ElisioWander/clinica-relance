@@ -5,6 +5,7 @@ import { MostPopulars } from "../Components/Home/MostPopulars";
 import { OurProfessionals } from "../Components/Home/OurProfessionals";
 import { Procedures } from "../Components/Home/Procedures";
 import { client } from "../services/prismic";
+import Head from "next/head"
 
 import * as prismicH from '@prismicio/helpers'
 
@@ -37,6 +38,10 @@ interface HomeProps {
 export default function Home({ populars, procedures, banners }: HomeProps) {
   return (
     <div className="w-full box-border bg-white-50 flex flex-col items-center ">
+      <Head>
+        <title>Home | Relance</title>
+      </Head>
+
       <Introduction banners={banners} />
 
       <MostPopulars populars={populars} />

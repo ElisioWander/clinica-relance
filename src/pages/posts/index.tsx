@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 import { client } from "../../services/prismic";
 import * as prismicH from "@prismicio/helpers"
 import Link from "next/link";
+import Head from "next/head";
 
 interface ServicesProps {
   procedures: Array<{
@@ -15,6 +16,10 @@ interface ServicesProps {
 export default function Services({ procedures }: ServicesProps) {
   return (
     <div className="w-full bg-white-300 flex flex-col animate-goVisible ">
+      <Head>
+        <title>Procedimentos | Relance</title>
+      </Head>
+
       <h1
         className="w-full p-7 relative bg-gray-300 text-center text-white-100 text-3xl font-merriweather
         uppercase after:content-[''] after:absolute after:left-1/2 after:top-full after:block after:w-0 after:h-0 after:z-10 after:border-t-[20px]

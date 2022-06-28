@@ -4,12 +4,17 @@ import { FaFacebookF, FaMapMarkerAlt } from "react-icons/fa"
 import { IoLogoWhatsapp } from 'react-icons/io'
 import { AiFillInstagram } from 'react-icons/ai'
 import dynamic from "next/dynamic";
+import Head from "next/head";
 
 const Map = dynamic(import("../Components/Map"), {ssr: false})
 
 export default function Contact() {
   return (
     <>
+      <Head>
+        <title>Contato | Relance</title>
+      </Head>
+
       <div className="w-full flex flex-col items-center animate-goVisible ">
         <h1
           className="w-full p-7 relative bg-gray-300 text-center text-white-100 text-3xl font-merriweather

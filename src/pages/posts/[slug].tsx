@@ -4,6 +4,7 @@ import procedures from "../../../data.json";
 import { GetServerSideProps } from "next";
 import { client } from "../../services/prismic";
 import * as prismicH from "@prismicio/helpers";
+import Head from "next/head";
 
 interface SingleServiceProps {
   procedure: {
@@ -28,6 +29,10 @@ interface SingleServiceProps {
 export default function SingleService({ procedure }: SingleServiceProps) {
   return (
     <>
+      <Head>
+        <title>Procedimento | {procedure.slug}</title>
+      </Head>
+    
       <Introduction procedure={procedure} />
 
       <div>
