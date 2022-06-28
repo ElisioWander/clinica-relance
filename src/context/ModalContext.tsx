@@ -1,5 +1,4 @@
-import { useRouter } from "next/router";
-import { createContext, Dispatch, ReactElement, SetStateAction, useContext, useEffect, useState } from "react";
+import { createContext, ReactElement, useContext, useEffect, useState } from "react";
 
 type ModalContextData = {
   handleOpenModal: () => void;
@@ -14,7 +13,6 @@ export const ModalContext = createContext({} as ModalContextData)
 
 export function ModalContextProvider({ children }: ModalContextProviderProps) {
   const [modal, setModal] = useState(false)
-  const router = useRouter()
 
   useEffect(() => {
     if(modal === false) {

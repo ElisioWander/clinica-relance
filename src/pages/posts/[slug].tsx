@@ -31,7 +31,7 @@ export default function SingleService({ procedure }: SingleServiceProps) {
       <Introduction procedure={procedure} />
 
       <div>
-        <main className="w-full max-w-[820px] p-5 pb-14 m-auto ">
+        <main className="w-full max-w-[820px] p-5 pb-14 m-auto animate-goBack ">
           <h2 className="text-1xl md:text-3xl py-5 pb-8 md:text-start md:mb-5 flex ">
             O que você precisa saber
             <img
@@ -49,7 +49,7 @@ export default function SingleService({ procedure }: SingleServiceProps) {
               >
                 <details className="p-6 open:bg-zinc-200 transition-all ">
                   <summary className="text-zinc-700 text-md  md:text-lg font-roboto font-bold hover:cursor-pointer ">
-                    <span className="ml-1">{item.quest}</span>
+                    <span className="ml-1 ">{item.quest}</span>
                   </summary>
 
                   <div className="text-zinc-600 text-sm md:text-base p-3 md:px-5 transition-all  tracking-normal font-roboto">

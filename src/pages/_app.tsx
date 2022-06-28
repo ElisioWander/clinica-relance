@@ -8,6 +8,7 @@ import { SidebarContextProvider } from "../context/sidebarContext";
 import { ModalContextProvider } from "../context/ModalContext";
 
 import "../global.css";
+import { MyPopover } from "../Components/Widget/MyPopover";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,6 +18,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           <PrismicProvider client={client}>
             <Sidebar />
             <Header />
+            <MyPopover />
             <Component {...pageProps} />
             <Footer />
           </PrismicProvider>

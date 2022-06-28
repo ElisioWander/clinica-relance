@@ -1,4 +1,6 @@
-import { FacebookLogo, InstagramLogo, MapPinLine, WhatsappLogo } from "phosphor-react";
+import { FaFacebookF, FaMapMarkerAlt } from "react-icons/fa"
+import { IoLogoWhatsapp } from 'react-icons/io'
+import { AiFillInstagram } from 'react-icons/ai'
 
 export function Footer() {
   return (
@@ -6,7 +8,7 @@ export function Footer() {
       <div className="w-full mt-3 flex flex-col gap-2 order-1 md:order-none " >
         <span className="md:ml-2 flex justify-center md:items-start md:justify-start text-lg ms:text-2xl font-merriweather " >Endereço</span>
         <span className="md:pt-0 text-xs md:text-sm font-roboto leading-6 flex gap-2 justify-center md:justify-start text-center md:text-start " >
-        <MapPinLine size={32}  className="hidden md:flex" />Ubá, MG <br/>
+        <FaMapMarkerAlt size={32}  className="hidden md:flex" />Ubá, MG <br/>
           Av. Padre Arnaldo Jansen <br/>
           (32) 999999999
         </span>
@@ -17,9 +19,9 @@ export function Footer() {
       </div>
       <div className="flex flex-col items-center pb-3 md:p-0 md:items-end gap-2 md:gap-6 ">
         <div className="flex gap-3 p-2" >
-          <a className="w-9 h-9 md:w-11 md:h-11 bg-white-300 rounded-full flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all " target="_blank" href="https://google.com" ><WhatsappLogo fontSize={20} weight={"bold"} className="text-zinc-900 md:w-7 md:h-7 " /></a>
-          <a className="w-9 h-9 md:w-11 md:h-11 bg-white-300 rounded-full flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all " target="_blank" href="https://google.com" ><InstagramLogo fontSize={20} weight={"bold"} className="text-zinc-900 md:w-7 md:h-7 " /></a>
-          <a className="w-9 h-9 md:w-11 md:h-11 bg-white-300 rounded-full flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all " target="_blank" href="https://google.com" ><FacebookLogo fontSize={20} weight={"bold"} className="text-zinc-900 md:w-7 md:h-7 " /></a>
+          <a className="w-9 h-9 md:w-11 md:h-11 bg-white-300 rounded-full flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all " target="_blank" href="https://google.com" ><IoLogoWhatsapp fontSize={20} className="text-zinc-700 md:w-7 md:h-7 " /></a>
+          <a className="w-9 h-9 md:w-11 md:h-11 bg-white-300 rounded-full flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all " target="_blank" href="https://google.com" ><AiFillInstagram fontSize={20} className="text-zinc-700 md:w-7 md:h-7 " /></a>
+          <a className="w-9 h-9 md:w-11 md:h-11 bg-white-300 rounded-full flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all " target="_blank" href="https://google.com" ><FaFacebookF fontSize={20} className="text-zinc-700 md:w-7 md:h-7 " /></a>
         </div>
         <div className="flex gap-3" >
           <a className="text-xs sm:text-sm font-roboto text-center hover:underline hover:underline-offset-4 transition-all " href="/"> Home</a>

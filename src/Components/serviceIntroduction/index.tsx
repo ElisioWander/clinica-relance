@@ -10,7 +10,7 @@ interface IntroductionProps {
 export function Introduction({ procedure }: IntroductionProps) {
   return (
     <section 
-      className="w-full py-14"
+      className="w-full py-14 animate-goVisible "
       style={{
         'backgroundImage': `url(${procedure.image})`,
         'backgroundPosition': 'center',
@@ -20,7 +20,7 @@ export function Introduction({ procedure }: IntroductionProps) {
     >
 
       <main 
-        className="w-4/5 lg:w-2/3 m-auto bg-white-100 z-50 rounded-sm lg:flex lg:justify-center shadow-md"
+        className="w-4/5 lg:w-2/3 m-auto bg-white-100 z-50 rounded-sm lg:flex lg:justify-center shadow-lg "
       >
         <div className="md:flex " >
           <div className="w-full flex items-center justify-center" >

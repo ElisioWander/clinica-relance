@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from "react";
+import { useState } from "react";
 import { useModal } from "../../context/ModalContext";
 import { api } from "../../services/axios";
 import { Loading } from "../Loading";

@@ -1,6 +1,6 @@
 import { useSinglePrismicDocument } from "@prismicio/react";
-import * as prismicH from '@prismicio/helpers'
 import Link from "next/link";
+import * as prismicH from '@prismicio/helpers'
 
 export function OurProfessionals() {
   let [document] = useSinglePrismicDocument("homesummary")

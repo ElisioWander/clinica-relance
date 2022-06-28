@@ -18,7 +18,7 @@ interface AboutProps {
 
 export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
   return (
-    <div className="w-full" >
+    <div className="w-ful animate-goVisible " >
       <h1
         className="p-7 relative bg-gray-300 text-center text-white-100 text-3xl font-merriweather
         uppercase after:content-[''] after:absolute after:left-1/2 after:top-full after:block after:w-0 after:h-0 after:z-10 after:border-t-[20px]
@@ -27,7 +27,7 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
       >
         CONHEÇA NOSSO TIME
       </h1>
-      <main className="w-full m-auto py-14 transition-all ">
+      <main className="w-full m-auto pt-14 transition-all ">
         <section className="md:py-14 mb-14 flex flex-col items-center justify-center md:flex-row animate-goBack ">
           <div className="w-80 p-5 md:p-0 md:mt-8 relative ">
             <div
