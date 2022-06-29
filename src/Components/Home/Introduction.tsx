@@ -17,7 +17,7 @@ interface IntroductionProps {
 
 export function Introduction({ banners }: IntroductionProps) {
   return (
-    <div className="w-full h-[calc(100vh-40rem)] md:h-[calc(100vh-30rem)] lg:h-[calc(100vh-5rem)] animate-goVisible bg-zinc-800">
+    <div className="w-full h-[calc(100vh-10)] lg:h-[calc(100vh-5rem)] animate-goVisible bg-zinc-800">
       <Swiper
         spaceBetween={0}
         centeredSlides={true}

@@ -1,5 +1,8 @@
 import { GetStaticProps } from "next";
 import { client } from "../services/prismic";
+import { FaFacebookF, FaMapMarkerAlt } from "react-icons/fa"
+import { IoLogoWhatsapp } from 'react-icons/io'
+import { AiFillInstagram } from 'react-icons/ai'
 
 import * as prismicH from "@prismicio/helpers";
 import Head from "next/head";
@@ -18,6 +21,8 @@ interface AboutProps {
 }
 
 export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
+  const socialMediaStyle = ` `
+  
   return (
     <div className="w-ful animate-goVisible " >
       <Head>
@@ -61,6 +66,11 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
             <p className="max-w-[720px] text-zinc-600 text-sm md:text-base font-roboto leading-5 ">
               {tamyrisSummary.summary}
             </p>
+
+            <div className="flex gap-1 p-2" >
+              <a className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`} target="_blank" href="https://api.whatsapp.com/send/?phone=5532998001512" ><IoLogoWhatsapp fontSize={20} className="text-green-100 md:w-7 md:h-7 " /></a>
+              <a className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`} target="_blank" href="https://www.instagram.com/esteta_tamyrisferreira/" ><AiFillInstagram fontSize={20} className="text-green-100 md:w-7 md:h-7 " /></a>
+            </div>
           </div>
         </section>
         <section className="py-14 flex flex-col items-center justify-center md:flex-row bg-white-300 animate-goAhead ">
@@ -91,6 +101,10 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
             <p className="w-full max-w-[720px] text-zinc-600 text-sm md:text-base md:text-start font-roboto leading-5 ">
               {amandaSummary.summary}
             </p>
+            <div className="flex gap-1 p-2" >
+              <a className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`} target="_blank" href="https://api.whatsapp.com/send/?phone=5532998001512" ><IoLogoWhatsapp fontSize={20} className="text-green-100 md:w-7 md:h-7 " /></a>
+              <a className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`} target="_blank" href="https://www.instagram.com/amandaferreira_beauty/" ><AiFillInstagram fontSize={20} className="text-green-100 md:w-7 md:h-7 " /></a>
+            </div>
           </div>
         </section>
       </main>

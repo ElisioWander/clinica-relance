@@ -9,7 +9,7 @@ const sendMessageType = {
   WHATSAPP: {
     title: "whatsapp",
     image: <IoLogoWhatsapp className="w-10 h-10" />,
-    destination: "/",
+    destination: "https://api.whatsapp.com/send/?phone=5532998001512",
   },
   EMAIL: {
     title: "e-mail",

@@ -7,6 +7,8 @@ import Head from "next/head";
 const Map = dynamic(import("../Components/Map"), { ssr: false });
 
 export default function Location() {
+  const socialMediaStyle = `w-9 h-9 md:w-11 md:h-11 bg-white-300 rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all `
+  
   return (
     <>
       <Head>
@@ -57,42 +59,14 @@ export default function Location() {
                 <strong className="text-zinc-700 font-poppins text-base lg:text-md font-medium ">
                   Telefone:
                 </strong>{" "}
-                (32) 9 99999999
+                (32) 99800-1512
               </li>
             </ul>
           </div>
 
           <div className="w-full flex pb-4 pl-5">
-            <a
-              className="w-12 h-12 mr-2 md:w-11 md:h-11 rounded-full flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all "
-              target="_blank"
-              href="https://google.com"
-            >
-              <IoLogoWhatsapp
-                fontSize={30}
-                className="text-zinc-700 md:w-7 md:h-7 "
-              />
-            </a>
-            <a
-              className="w-12 h-12 mr-2 md:w-11 md:h-11 rounded-full flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all "
-              target="_blank"
-              href="https://google.com"
-            >
-              <AiFillInstagram
-                fontSize={30}
-                className="text-zinc-700 md:w-7 md:h-7 "
-              />
-            </a>
-            <a
-              className="w-12 h-12 md:w-11 md:h-11 rounded-full flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all "
-              target="_blank"
-              href="https://google.com"
-            >
-              <FaFacebookF
-                fontSize={30}
-                className="text-zinc-700 md:w-7 md:h-7 "
-              />
-            </a>
+          <a className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`} target="_blank" href="https://api.whatsapp.com/send/?phone=5532998001512" ><IoLogoWhatsapp fontSize={20} className="text-green-100 md:w-7 md:h-7 " /></a>
+              <a className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`} target="_blank" href="https://www.instagram.com/clinica_relance/" ><AiFillInstagram fontSize={20} className="text-green-100 md:w-7 md:h-7 " /></a>
           </div>
         </div>
         <div className="w-full h-[420px] md:h-screen p-[2px] z-[1] relative bg-green-100 ">

@@ -32,15 +32,14 @@ export default function Contact() {
                 R. Altivo Brandão, 626 - Uba, Ubá - MG, 36500-000
               </span>
               <span className="flex text-sm text-zinc-600 font-poppins" >
-                (32) 999999999
+                (32) 99800-1512
               </span>
-              <span className="flex" >
-                <a className="w-9 h-9 my-2 flex items-center justify-center rounded-md hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all " target="_blank" href="https://google.com" ><IoLogoWhatsapp className="text-zinc-700" fontSize={24} /></a>
-                <a className="w-9 h-9 my-2 flex items-center justify-center rounded-md hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all " target="_blank" href="https://google.com" ><AiFillInstagram className="text-zinc-700" fontSize={24} /></a>
-                <a className="w-9 h-9 my-2 flex items-center justify-center rounded-md hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all " target="_blank" href="https://google.com" ><FaFacebookF className="text-zinc-700" fontSize={24} /></a>
+              <span className="flex gap-1 py-2 " >
+              <a className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`} target="_blank" href="https://api.whatsapp.com/send/?phone=5532998001512" ><IoLogoWhatsapp fontSize={20} className="text-green-100 md:w-7 md:h-7 " /></a>
+              <a className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`} target="_blank" href="https://www.instagram.com/clinica_relance/" ><AiFillInstagram fontSize={20} className="text-green-100 md:w-7 md:h-7 " /></a>
               </span>
             </div>
-            <div className="w-full lg:w-[420px] h-[240px] z-[1] relative " >
+            <div className="w-full lg:w-[420px] h-[220px] z-[1] relative " >
               <Map />
             </div>
           </div>
