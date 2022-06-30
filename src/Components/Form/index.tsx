@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useModal } from "../../context/ModalContext";
 import { api } from "../../services/axios";
-import { Loading } from "../Loading";
+import { Loading } from "./Loading";
 import { useForm, SubmitHandler, Resolver } from 'react-hook-form'
 
 type SendMessageData = {

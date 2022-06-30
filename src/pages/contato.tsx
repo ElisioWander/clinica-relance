@@ -1,14 +1,27 @@
 import { Form } from "../Components/Form";
 import { Modal } from "../Components/Modal";
-import { FaFacebookF, FaMapMarkerAlt } from "react-icons/fa"
+import { FaMapMarkerAlt } from "react-icons/fa"
 import { IoLogoWhatsapp } from 'react-icons/io'
 import { AiFillInstagram } from 'react-icons/ai'
+import { GetStaticProps } from "next";
+import { client } from "../services/prismic";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import * as prismicH from "@prismicio/helpers"
+
 
 const Map = dynamic(import("../Components/Map"), {ssr: false})
 
-export default function Contact() {
+type LocationData = {
+  location: {
+    street: string;
+    neighborhood: string;
+    number: string;
+    cellphone: string;
+  }
+}
+
+export default function Contact({ location }: LocationData) {
   return (
     <>
       <Head>
@@ -29,10 +42,10 @@ export default function Contact() {
             <div >
               <span className="flex text-zinc-600 text-sm font-poppins " >
                 <FaMapMarkerAlt className="w-4 h-4 mb-3 mr-2 text-green-300 " />
-                R. Altivo Brandão, 626 - Uba, Ubá - MG, 36500-000
+                {location.street}, {location.number} - Ubá - MG, {location.neighborhood}
               </span>
               <span className="flex text-sm text-zinc-600 font-poppins" >
-                (32) 99800-1512
+                {location.cellphone}
               </span>
               <span className="flex gap-1 py-2 " >
               <a className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`} target="_blank" href="https://api.whatsapp.com/send/?phone=5532998001512" ><IoLogoWhatsapp fontSize={20} className="text-green-100 md:w-7 md:h-7 " /></a>
@@ -43,11 +56,29 @@ export default function Contact() {
               <Map />
             </div>
           </div>
-          <Form  />
+          <Form />
         </div>
       </div>
 
       <Modal />
     </>
   );
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await client.getSingle("location")
+
+  const location = {
+    street: prismicH.asText(response.data.street),
+    neighborhood: prismicH.asText(response.data.neighborhood),
+    number: prismicH.asText(response.data.number),
+    cellphone: prismicH.asText(response.data.cellphone)
+  }
+
+  return {
+    props: {
+      location
+    },
+    revalidate: 24 * 60 * 60 //24h
+  }
 }

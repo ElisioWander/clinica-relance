@@ -113,8 +113,6 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     faq: (questions || null ),
   };
 
-  console.log(post.data)
-
   return {
     props: { procedure },
   };

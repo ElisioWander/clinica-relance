@@ -1,14 +1,27 @@
-import { FaFacebookF } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
+import { GetStaticProps } from "next";
+import { client } from "../services/prismic";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import * as prismicH from "@prismicio/helpers"
 
 const Map = dynamic(import("../Components/Map"), { ssr: false });
 
-export default function Location() {
-  const socialMediaStyle = `w-9 h-9 md:w-11 md:h-11 bg-white-300 rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all `
-  
+interface LocationProps {
+  location: {
+    image: string;
+    title: string;
+    state: string;
+    city: string;
+    street: string;
+    neighborhood: string;
+    number: string;
+    cellphone: string;
+  }
+}
+
+export default function Location({ location }: LocationProps) {  
   return (
     <>
       <Head>
@@ -20,14 +33,14 @@ export default function Location() {
           <div className="w-full h-64 ">
             <img
               className="w-full h-full object-cover "
-              src="https://images.prismic.io/relancestudiorepo/2737c8a0-1b5e-482d-a6c6-61a1d72d4bdb_relance-image.png?auto=compress,format"
+              src={location.image}
               alt="imagem do relance studio"
             />
           </div>
 
           <div className="p-5">
             <h1 className="text-2xl md:text-3xl font-merriweather font-bold py-4 text-zinc-700 ">
-              Relance Studio
+              {location.title}
             </h1>
 
             <ul className="text-zinc-500 text-sm lg:text-[15px] font-poppins transition-all ">
@@ -35,31 +48,37 @@ export default function Location() {
                 <strong className="text-zinc-700 font-poppins text-base lg:text-md font-medium ">
                   Estado:
                 </strong>{" "}
-                Minas Gerais
+                {location.state}
               </li>
               <li>
                 <strong className="text-zinc-700 font-poppins text-base lg:text-md font-medium ">
                   Cidade:
                 </strong>{" "}
-                Ubá
+                {location.city}
               </li>
               <li>
                 <strong className="text-zinc-700 font-poppins text-base lg:text-md font-medium ">
                   Rua:
                 </strong>{" "}
-                Av. Padre Arnaldo Jansen
+                {location.street}
+              </li>
+              <li>
+                <strong className="text-zinc-700 font-poppins text-base lg:text-md font-medium ">
+                  Bairro:
+                </strong>{" "}
+                {location.neighborhood}
               </li>
               <li>
                 <strong className="text-zinc-700 font-poppins text-base lg:text-md font-medium ">
                   Número:
                 </strong>{" "}
-                626
+                {location.number}
               </li>
               <li>
                 <strong className="text-zinc-700 font-poppins text-base lg:text-md font-medium ">
                   Telefone:
                 </strong>{" "}
-                (32) 99800-1512
+                {location.cellphone}
               </li>
             </ul>
           </div>
@@ -75,4 +94,26 @@ export default function Location() {
       </section>
     </>
   );
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await client.getSingle("location")
+
+  const location = {
+    image: response.data.image.url,
+    title: prismicH.asText(response.data.title),
+    state: prismicH.asText(response.data.state),
+    city: prismicH.asText(response.data.city),
+    street: prismicH.asText(response.data.street),
+    neighborhood: prismicH.asText(response.data.neighborhood),
+    number: prismicH.asText(response.data.number),
+    cellphone: prismicH.asText(response.data.cellphone)
+  }
+
+  return {
+    props: {
+      location
+    },
+    revalidate: 24 * 60 * 60 //24h
+  }
 }
