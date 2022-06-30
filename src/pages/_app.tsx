@@ -7,8 +7,9 @@ import { Sidebar } from "../Components/Sidebar";
 import { SidebarContextProvider } from "../context/sidebarContext";
 import { ModalContextProvider } from "../context/ModalContext";
 
-import "../global.css";
 import { MyPopover } from "../Components/Widget/MyPopover";
+
+import "../global.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (

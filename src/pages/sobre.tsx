@@ -1,6 +1,5 @@
 import { GetStaticProps } from "next";
 import { client } from "../services/prismic";
-import { FaFacebookF, FaMapMarkerAlt } from "react-icons/fa"
 import { IoLogoWhatsapp } from 'react-icons/io'
 import { AiFillInstagram } from 'react-icons/ai'
 
@@ -21,8 +20,6 @@ interface AboutProps {
 }
 
 export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
-  const socialMediaStyle = ` `
-  
   return (
     <div className="w-ful animate-goVisible " >
       <Head>
