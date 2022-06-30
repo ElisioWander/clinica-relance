@@ -1,6 +1,4 @@
 import { Introduction } from "../../Components/serviceIntroduction";
-import question from "../../../data.json";
-import procedures from "../../../data.json";
 import { GetServerSideProps } from "next";
 import { client } from "../../services/prismic";
 import * as prismicH from "@prismicio/helpers";
