@@ -65,7 +65,7 @@ export const getStaticProps: GetStaticProps = async () => {
       slug: popular.uid,
       title: prismicH.asText(popular.data.title),
       image: popular.data.image.url,
-      content: prismicH.asText(popular.data.content)?.substring(0, 100)
+      content: prismicH.asText(popular.data.content)?.substring(0, 100)?.substring(0, 100) + "..."
     }
   })
 
@@ -82,7 +82,7 @@ export const getStaticProps: GetStaticProps = async () => {
     return {
       id: banner.id,
       slug: banner.uid,
-      image: banner.data.image.url
+      image: banner.data.image.url,
     }
   })
 
