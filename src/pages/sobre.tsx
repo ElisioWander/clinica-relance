@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import { client } from "../services/prismic";
 import { IoLogoWhatsapp } from 'react-icons/io'
 import { AiFillInstagram } from 'react-icons/ai'
@@ -107,13 +107,6 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
       </main>
     </div>
   );
-}
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: "blocking"
-  }
 }
 
 export const getStaticProps: GetStaticProps = async () => {

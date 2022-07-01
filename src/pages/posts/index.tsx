@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { client } from "../../services/prismic";
 import * as prismicH from "@prismicio/helpers"
 import Link from "next/link";
@@ -54,6 +54,13 @@ export default function Services({ procedures }: ServicesProps) {
       </main>
     </div>
   );
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: "blocking"
+  }
 }
 
 export const getStaticProps: GetStaticProps = async () => {
