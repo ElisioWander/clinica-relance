@@ -56,13 +56,6 @@ export default function Services({ procedures }: ServicesProps) {
   );
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: "blocking"
-  }
-}
-
 export const getStaticProps: GetStaticProps = async () => {
   const allProcedures = await client.getAllByType('procedure')
 
