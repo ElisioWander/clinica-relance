@@ -41,7 +41,7 @@ export default function Services({ procedures }: ServicesProps) {
                 'backgroundSize': 'cover',
               }}
             >
-              <div className="w-full h-full flex flex-col items-center justify-center p-5 text-center text-transparent hover:text-white-300 hover:bg-zinc-900 hover:bg-opacity-50 transition-all duration-500" >
+              <div className="w-full h-full flex flex-col items-center justify-center p-5 text-center text-white-100 md:text-transparent md:hover:text-white-300 bg-zinc-900 md:bg-transparent md:hover:bg-zinc-900 bg-opacity-70 md:hover:bg-opacity-60 transition-all duration-500" >
                 <p className="text-sm font-poppins tracking-wide "
                 >
                   <span className="text-2xl pb-1 font-merriweather block text-center transition-all duration-500" >{procedure.title}</span>
