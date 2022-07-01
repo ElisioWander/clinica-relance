@@ -1,4 +1,3 @@
-import { Introduction } from "../../Components/serviceIntroduction";
 import { GetServerSideProps } from "next";
 import { client } from "../../services/prismic";
 import * as prismicH from "@prismicio/helpers";
@@ -30,8 +29,40 @@ export default function SingleService({ procedure }: SingleServiceProps) {
       <Head>
         <title>Procedimento | {procedure.slug}</title>
       </Head>
-    
-      <Introduction procedure={procedure} />
+
+      <section
+        className="w-full py-14 md:animate-goVisible "
+        style={{
+          backgroundImage: `url(${procedure.image})`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        <main className="w-4/5 lg:w-2/3 m-auto bg-white-100 z-50 rounded-sm lg:flex lg:justify-center shadow-lg ">
+          <div className="md:flex ">
+            <div className="w-full flex items-center justify-center">
+              <img
+                src={procedure.image}
+                alt="poster depilação a laiser"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="w-full p-5 pb-10 md:p-10 flex flex-col justify-center bg-white-300 ">
+              <h1
+                className="py-4 md:m-0 text-center md:text-start 
+           text-2xl lg:text-4xl text-gray-300 font-merriweather "
+              >
+                {procedure.title}
+              </h1>
+
+              <p className="text-center md:text-start md:p-2 text-sm lg:text-base leading-5 font-roboto text-zinc-600 transition-all ">
+                {procedure.content}
+              </p>
+            </div>
+          </div>
+        </main>
+      </section>
 
       <div>
         <main className="w-full max-w-[820px] p-5 pb-14 m-auto md:animate-goBack ">
@@ -89,7 +120,7 @@ export default function SingleService({ procedure }: SingleServiceProps) {
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const slug = params?.slug;
-  
+
   const post = await client.getByUID("procedure", String(slug));
 
   const questions = post.data.body[1]?.items.map((item: any) => {
@@ -107,8 +138,8 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     image: post.data.image.url,
     title: prismicH.asText(post.data.title),
     content: prismicH.asText(post.data.content),
-    galery: (post.data.body[0]?.items || null), 
-    faq: (questions || null ),
+    galery: post.data.body[0]?.items || null,
+    faq: questions || null,
   };
 
   return {

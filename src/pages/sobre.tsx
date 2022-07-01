@@ -7,7 +7,6 @@ import * as prismicH from "@prismicio/helpers";
 import Head from "next/head";
 
 type Summary = {
-  slug: string;
   title: string;
   name: string;
   summary: string;
@@ -114,7 +113,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const summaryTwo = await client.getSingle("tamyrissummary");
 
   const amandaSummary = {
-    slug: summaryOne.uid,
     title: prismicH.asText(summaryOne.data.title),
     name: prismicH.asText(summaryOne.data.name),
     summary: prismicH.asText(summaryOne.data.summary),
@@ -122,7 +120,6 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 
   const tamyrisSummary = {
-    slug: summaryTwo.uid,
     title: prismicH.asText(summaryTwo.data.title),
     name: prismicH.asText(summaryTwo.data.name),
     summary: prismicH.asText(summaryTwo.data.summary),

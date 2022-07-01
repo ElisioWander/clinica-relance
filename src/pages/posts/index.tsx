@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import { client } from "../../services/prismic";
 import * as prismicH from "@prismicio/helpers"
 import Link from "next/link";
