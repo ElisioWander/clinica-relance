@@ -28,7 +28,7 @@ export function OurProfessionals() {
           <img
             src={summary.image}
             alt="shape with profile photo inside"
-            className="w-full h-full "
+            className="w-full h-full object-cover "
           />
         </div>
 
