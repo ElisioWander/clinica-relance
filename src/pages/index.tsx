@@ -74,6 +74,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       populars,
       procedures
-    }
+    },
+    revalidate: 24 * 60 * 60
   }
 }
