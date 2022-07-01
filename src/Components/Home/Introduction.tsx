@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useAllPrismicDocumentsByType } from "@prismicio/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -6,39 +7,17 @@ import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
 import { Pagination, Navigation, Autoplay } from "swiper";
-import { client } from "../../services/prismic";
-import { useEffect, useState } from "react";
-import { Spinner } from "../Spinner";
-
-type BannersData = Array<{
-  id: string;
-  image: string;
-  slug: string | null ;
-}>
-
 
 export function Introduction() {
-  // const [banners] = useAllPrismicDocumentsByType('banner')
-  const [banner, setBanner] = useState<BannersData>()
-  const [isLoading, setIsLoading] = useState(false)
+  const [banners] = useAllPrismicDocumentsByType("banner") 
 
-  useEffect(() => {
-    (async function() {
-      setIsLoading(true)
-      const banners = await client.getAllByType("banner")
-
-      const banner = banners?.map(item => {
-        return {
-          id: item.id,
-          slug: item.uid,
-          image: item.data.image.url,
-        }
-      })
-
-      setBanner(banner)
-      setIsLoading(false)
-    })()
-  }, [])
+  const banner = banners?.map(item => {
+    return {
+      id: item.id,
+      slug: item.uid,
+      image: item.data.image.url,
+    }
+  })
 
   return (
     <div className="w-full md:h-[calc(100vh-10rem)] md:animate-goVisible bg-zinc-800">
@@ -57,12 +36,6 @@ export function Introduction() {
         modules={[Autoplay, Pagination, Navigation]}
         className={`${`w-full h-full rounded-md`}, mySwiper`}
       >
-        {isLoading && (
-          <SwiperSlide >
-            <Spinner />
-          </SwiperSlide>
-        )}
-
         {banner &&
           banner.map((item) => (
             <SwiperSlide key={item.id}>
