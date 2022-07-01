@@ -19,8 +19,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     })
 
     await transport.sendMail({
-      from: `Relance Studio <relancestudio@outlook.com>`,
-      to: 'relancestudio@outlook.com',
+      from: `Clínica Relance <clinicarelance@hotmail.com>`,
+      to: 'clinicarelance@hotmail.com',
       subject: "Mensagem do site",
       html: [
         `<div style="font-family: sans-serif"; font-size: 16px; color: #111; >`,
