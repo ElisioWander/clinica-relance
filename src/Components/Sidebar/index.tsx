@@ -10,7 +10,7 @@ export function Sidebar() {
     <>
       {sidebarActive && (
         <div className="w-full h-full bg-zinc-900 bg-opacity-50 absolute z-50 ">
-          <div className="w-64 h-full transition-all bg-white-300 animate-goAhead ">
+          <div className="w-64 h-full transition-all bg-white-300 animate-goAhead duration-300 ">
             <SidebarNavigation />
           </div>
         </div>

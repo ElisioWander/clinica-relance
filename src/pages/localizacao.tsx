@@ -28,7 +28,7 @@ export default function Location({ location }: LocationProps) {
         <title>Localização | Relance</title>
       </Head>
 
-      <section className="w-full h-full md:flex relative animate-goVisible ">
+      <section className="w-full h-full md:flex relative md:animate-goVisible ">
         <div className="w-full md:w-[420px] md:flex md:flex-col bg-white-300 transition-all ">
           <div className="w-full h-64 ">
             <img

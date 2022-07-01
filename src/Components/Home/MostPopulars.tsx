@@ -25,7 +25,7 @@ export function MostPopulars({ populars }: MostPopularsProps) {
           populars.map((item) => (
             <Link key={item.slug} href={`/posts/${item.slug}`}>
               <a
-                className="w-11/12 h-4/5 lg:w-80 lg:h-full flex items-center justify-center mb-8 lg:mb-0 rounded-sm bg-white-300 shadow-md scale-100 hover:scale-105 hover:border-2 hover:border-green-300 hover:shadow-xl transition-all ">
+                className="w-11/12 h-4/5 lg:w-80 lg:h-full flex items-center justify-center mb-8 lg:mb-0 rounded-sm bg-white-50 shadow-md scale-100 hover:scale-105 hover:border-2 hover:border-green-300 hover:shadow-xl transition-all ">
                 <div className="p-7" >
                   <div className="w-48 h-48 m-auto rounded-full border-2 shadow-sm">
                     <img

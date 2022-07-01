@@ -28,7 +28,7 @@ export default function Contact({ location }: LocationData) {
         <title>Contato | Relance</title>
       </Head>
 
-      <div className="w-full flex flex-col items-center animate-goVisible ">
+      <div className="w-full flex flex-col items-center md:animate-goVisible ">
         <h1
           className="w-full p-7 relative bg-gray-300 text-center text-white-100 text-3xl font-merriweather
           uppercase after:content-[''] after:absolute after:left-1/2 after:top-full after:block after:w-0 after:h-0 after:z-10 after:border-t-[20px]
@@ -38,7 +38,7 @@ export default function Contact({ location }: LocationData) {
           Fale conosco
         </h1>
         <div className="w-full h-full flex flex-col items-center justify-center max-w-[1024px] md:h-480px py-14 md:grid md:grid-cols-2 ">
-          <div className="w-full h-full flex flex-col justify-center p-5 order-1 md:order-none animate-goAhead " >
+          <div className="w-full h-full flex flex-col justify-center p-5 order-1 md:order-none md:animate-goAhead " >
             <div >
               <span className="flex text-zinc-600 text-sm font-poppins " >
                 <FaMapMarkerAlt className="w-4 h-4 mb-3 mr-2 text-green-300 " />

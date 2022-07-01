@@ -41,7 +41,7 @@ export function Introduction() {
   }, [])
 
   return (
-    <div className="w-full md:h-[calc(100vh-10rem)] animate-goVisible bg-zinc-800">
+    <div className="w-full md:h-[calc(100vh-10rem)] md:animate-goVisible bg-zinc-800">
       <Swiper
         spaceBetween={0}
         centeredSlides={true}

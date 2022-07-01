@@ -34,7 +34,7 @@ export default function SingleService({ procedure }: SingleServiceProps) {
       <Introduction procedure={procedure} />
 
       <div>
-        <main className="w-full max-w-[820px] p-5 pb-14 m-auto animate-goBack ">
+        <main className="w-full max-w-[820px] p-5 pb-14 m-auto md:animate-goBack ">
           <h2 className="text-1xl md:text-3xl py-5 pb-8 md:text-start md:mb-5 flex ">
             O que você precisa saber
             <img
@@ -63,7 +63,7 @@ export default function SingleService({ procedure }: SingleServiceProps) {
             ))}
         </main>
 
-        <section className="w-full max-w-[1080px] m-auto pb-5 md:px-5  animate-goTop">
+        <section className="w-full max-w-[1080px] m-auto pb-5 md:px-5  md:animate-goTop">
           <h2 className="w-1/3 text-3xl p-5 mb-8 ">Galeria</h2>
 
           <div className="w-full flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 items-center justify-center">

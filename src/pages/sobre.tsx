@@ -21,7 +21,7 @@ interface AboutProps {
 
 export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
   return (
-    <div className="w-ful animate-goVisible " >
+    <div className="w-ful md:animate-goVisible " >
       <Head>
         <title>Sobre | Relance</title>
       </Head>
@@ -35,7 +35,7 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
         CONHEÇA NOSSO TIME
       </h1>
       <main className="w-full m-auto pt-14 transition-all ">
-        <section className="md:py-14 mb-14 flex flex-col items-center justify-center md:flex-row animate-goBack ">
+        <section className="md:py-14 mb-14 flex flex-col items-center justify-center md:flex-row md:animate-goBack ">
           <div className="w-80 p-5 md:p-0 md:mt-8 relative ">
             <div
               className="w-[300px] h-[300px] md:w-[320px] md:h-[320px] transition-all "
@@ -70,7 +70,7 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
             </div>
           </div>
         </section>
-        <section className="py-14 flex flex-col items-center justify-center md:flex-row bg-white-300 animate-goAhead ">
+        <section className="py-14 flex flex-col items-center justify-center md:flex-row bg-white-300 md:animate-goAhead ">
           <div className="w-80 p-5 md:p-0 md:mt-8 relative md:order-1 ">
             <div
               className="w-[300px] h-[300px] md:w-[320px] md:h-[320px] transition-all "

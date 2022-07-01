@@ -15,7 +15,7 @@ interface ServicesProps {
 
 export default function Services({ procedures }: ServicesProps) {
   return (
-    <div className="w-full bg-white-300 flex flex-col animate-goVisible ">
+    <div className="w-full bg-white-300 flex flex-col md:animate-goVisible ">
       <Head>
         <title>Procedimentos | Relance</title>
       </Head>
@@ -29,7 +29,7 @@ export default function Services({ procedures }: ServicesProps) {
         PROCEDIMENTOS ESTÉTICOS
       </h1>
 
-      <main className="w-full max-w-[1080px] m-auto py-20 md:px-5 flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 items-center justify-center animate-goTop ">
+      <main className="w-full max-w-[1080px] m-auto py-20 md:px-5 flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 items-center justify-center md:animate-goTop ">
         { procedures && 
           procedures.map(procedure => (
             <Link key={procedure.slug} href={`/posts/${procedure.slug}`}>

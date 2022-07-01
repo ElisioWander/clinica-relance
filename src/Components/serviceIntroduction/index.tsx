@@ -10,7 +10,7 @@ interface IntroductionProps {
 export function Introduction({ procedure }: IntroductionProps) {
   return (
     <section 
-      className="w-full py-14 animate-goVisible "
+      className="w-full py-14 md:animate-goVisible "
       style={{
         'backgroundImage': `url(${procedure.image})`,
         'backgroundPosition': 'center',

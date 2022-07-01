@@ -56,7 +56,7 @@ export function Form() {
   return (
     <form
       onSubmit={handleSubmit(handleSubmitMessage)}
-      className="w-full h-[420px] p-5 flex flex-col justify-center animate-goBack "
+      className="w-full h-[420px] p-5 flex flex-col justify-center md:animate-goBack "
     >
       <span className="mb-4 text-zinc-400 font-semibold text-md font-roboto block  ">
         Deixe sua mensagem
