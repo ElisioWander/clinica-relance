@@ -1,9 +1,8 @@
-import { FaMapMarkerAlt } from "react-icons/fa"
 import { IoLogoWhatsapp } from 'react-icons/io'
 import { AiFillInstagram } from 'react-icons/ai'
-import { client } from "../../services/prismic"
 import { useAllPrismicDocumentsByType } from "@prismicio/react"
 import * as prismicH from "@prismicio/helpers"
+import Link from "next/link"
 
 export function Footer() {
   const [procedures] = useAllPrismicDocumentsByType('procedure')
@@ -22,7 +21,7 @@ export function Footer() {
   return (
     <div className="w-full md:h-80 relative flex flex-col md:grid grid-cols-3 items-center p-8 md:px-16 text-white-300 bg-zinc-900 transition-all " >
       <div className="w-full mt-3 flex flex-col gap-2 order-1 md:order-none" >
-        <span className="text-zinc-600 text-sm " >
+        <span className="text-zinc-600 text-sm text-center" >
           Creditos <br/>
           { procedure && procedure?.map(item => (
             <a 
@@ -45,11 +44,22 @@ export function Footer() {
           <a className={`${socialMediaStyle}`} target="_blank" href="https://www.instagram.com/clinica_relance/" ><AiFillInstagram fontSize={20} className="text-zinc-700 md:w-7 md:h-7 " /></a>
         </div>
         <div className="flex gap-3" >
-          <a className={`${navigationStyle}`} href="/"> Home</a>
-          <a className={`${navigationStyle}`} href=""> Serviços</a>
-          <a className={`${navigationStyle}`} href=""> Sobre</a>
-          <a className={`${navigationStyle}`} href=""> contato</a>
-          <a className={`${navigationStyle}`} href=""> local</a>
+          <Link href="/" >
+            <a className={`${navigationStyle}`} > Home</a>
+          </Link>
+          <Link href="/posts" >
+            <a className={`${navigationStyle}`} > Serviços</a>
+          </Link>
+          <Link href="/sobre" >
+            <a className={`${navigationStyle}`} > Sobre</a>
+          </Link>
+          <Link href="/contato" >
+            <a className={`${navigationStyle}`} > contato</a>
+          </Link>
+          <Link href="/localizacao" >
+            <a className={`${navigationStyle}`} > local</a>
+          </Link>
+
         </div>
       </div>
     </div>
