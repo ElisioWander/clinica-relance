@@ -2,56 +2,67 @@ import { useState } from "react";
 import { useModal } from "../../context/ModalContext";
 import { api } from "../../services/axios";
 import { Loading } from "./Loading";
-import { useForm, SubmitHandler, Resolver } from 'react-hook-form'
+import { useForm, SubmitHandler, Resolver } from "react-hook-form";
+import Link from "next/link";
 
 type SendMessageData = {
   name: string;
   email: string;
   comment: string;
-}
+};
 
 //configurando os valores do formulário e os erros
 const resolver: Resolver<SendMessageData> = async (values) => {
   return {
     values: values.name || values.email ? values : {},
-    errors: !values.name || !values.email ? {
-      name: {
-        type: 'required',
-        message: 'Nome obrigatório'
-      },
-      email: {
-        type: 'required',
-        message: 'Email obrigatório'
-      }
-    } : {}
-  }
-}
+    errors:
+      !values.name || !values.email
+        ? {
+            name: {
+              type: "required",
+              message: "Nome obrigatório",
+            },
+            email: {
+              type: "required",
+              message: "Email obrigatório",
+            },
+          }
+        : {},
+  };
+};
 
 export function Form() {
   const [comment, setComment] = useState("");
 
-  const { handleOpenModal } = useModal()
-  const { register, formState: {errors, isSubmitting}, handleSubmit, reset } = useForm<SendMessageData>({ resolver })
+  const { handleOpenModal } = useModal();
+  const {
+    register,
+    formState: { errors, isSubmitting },
+    handleSubmit,
+    reset,
+  } = useForm<SendMessageData>({ resolver });
 
-  const handleSubmitMessage:SubmitHandler<SendMessageData> = async (values) => {
-    const { name, email, comment } = values
+  const handleSubmitMessage: SubmitHandler<SendMessageData> = async (
+    values
+  ) => {
+    const { name, email, comment } = values;
 
     await api.post("message", {
       name,
       email,
-      comment
-    })
+      comment,
+    });
 
     //scrolar para o topo depois de enviar o formulário para o modal não ficar bugado
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
 
     //abrir o modal depois que enviar o formulário
-    handleOpenModal()
+    handleOpenModal();
     //resetando os campos do form após o envio
-    reset()
+    reset();
     //resetando o campo de mensagem após o envio
-    setComment("")
-  }
+    setComment("");
+  };
 
   return (
     <form
@@ -68,29 +79,57 @@ export function Form() {
           placeholder="nome"
           {...register("name")}
         />
-        {errors?.name && <span className="-mt-5 mb-5 ml-3 text-sm text-red-500 " >{errors.name.message}</span>}
+        {errors?.name && (
+          <span className="-mt-5 mb-5 ml-3 text-sm text-red-500 ">
+            {errors.name.message}
+          </span>
+        )}
         <input
           type="email"
           className="mb-5 py-3 px-4 text-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-100 rounded-md placeholder:text-sm bg-zinc-300 "
           placeholder="email"
           {...register("email")}
         />
-        {errors?.email && <span className="-mt-5 mb-5 ml-3 text-sm text-red-500 " >{errors.email.message}</span>}
+        {errors?.email && (
+          <span className="-mt-5 mb-5 ml-3 text-sm text-red-500 ">
+            {errors.email.message}
+          </span>
+        )}
         <textarea
           className="mb-5 p-4 min-h-[112px] text-zinc-800 text-sm rounded-md placeholder:text-sm bg-zinc-300 focus:border-1 focus:ring-green-100 focus:ring-1 focus:outline-none resize-none "
           placeholder="Digite sua mensagem aqui"
           {...register("comment")}
-          onChange={e => setComment(e.target.value)}
+          onChange={(e) => setComment(e.target.value)}
         />
-        {errors?.comment && <span className="-mt-5 mb-5 ml-3 text-sm text-red-500 " >{errors.comment.message}</span>} 
-
+        {errors?.comment && (
+          <span className="-mt-5 mb-5 ml-3 text-sm text-red-500 ">
+            {errors.comment.message}
+          </span>
+        )}
         <button
           type="submit"
-          className="py-3 px-4 rounded-md flex items-center justify-center text-sm text-white-300 font-semibold tracking-wide font-roboto hover:brightness-90 transition-all bg-green-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-100 disabled:opacity-70 disabled:hover:brightness-100 disabled:cursor-not-allowed "
+          className="py-3 px-4 mb-3 rounded-md flex items-center justify-center text-sm text-white-300 font-semibold tracking-wide font-roboto hover:brightness-90 transition-all bg-green-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-100 disabled:opacity-70 disabled:hover:brightness-100 disabled:cursor-not-allowed "
           disabled={comment.length === 0 || isSubmitting}
         >
           {isSubmitting ? <Loading /> : "Enviar"}
         </button>
+        <p className="text-[12px] text-zinc-500 text-center  ">
+          Clicando em "Enviar" você estará concordando com o
+          <Link href="/termo-de-uso">
+            <a className="text-blue-400 hover:underline underline-offset-2">
+              {" "}
+              Termo de Uso
+            </a>
+          </Link>{" "}
+          e
+          <Link href="politica-de-privacidade">
+            <a className="text-blue-400 hover:underline underline-offset-2">
+              {" "}
+              Política de Privacidade{" "}
+            </a>
+          </Link>
+          da Clínica Relance
+        </p>
       </div>
     </form>
   );
