@@ -46,6 +46,8 @@ export default function Services({ procedures }: ServicesProps) {
                 >
                   <span className="text-2xl pb-1 font-merriweather block text-center transition-all duration-500" >{procedure.title}</span>
                   {procedure.content}
+                  
+                  <span className="mt-5 text-base block  " >Click para saber mais</span>
                 </p>
               </div>
             </a>

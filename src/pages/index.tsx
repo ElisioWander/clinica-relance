@@ -5,23 +5,23 @@ import { MostPopulars } from "../Components/Home/MostPopulars";
 import { OurProfessionals } from "../Components/Home/OurProfessionals";
 import { Procedures } from "../Components/Home/Procedures";
 import { client } from "../services/prismic";
-import Head from "next/head"
+import Head from "next/head";
 
-import * as prismicH from '@prismicio/helpers'
+import * as prismicH from "@prismicio/helpers";
 
 type PopularsData = Array<{
   slug: string;
   title: string;
   image: string;
   content: string;
-}>
+}>;
 
 type ProceduresData = {
   slug: string;
   title: string;
   image: string;
   content: string;
-}
+};
 
 interface HomeProps {
   populars: PopularsData;
@@ -30,51 +30,57 @@ interface HomeProps {
 
 export default function Home({ populars, procedures }: HomeProps) {
   return (
-    <div className="w-full box-border bg-white-50 flex flex-col items-center ">
+    <>
       <Head>
         <title>Home | Relance</title>
       </Head>
+      <div className="w-full box-border bg-white-50 flex flex-col items-center ">
+        <Introduction />
 
-      <Introduction />
+        <MostPopulars populars={populars} />
 
-      <MostPopulars populars={populars} />
+        <OurProfessionals />
 
-      <OurProfessionals />
+        <Procedures procedures={procedures} />
 
-      <Procedures procedures={procedures} />
-
-      <Feedback />
-    </div>
+        <Feedback />
+      </div>
+    </>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPopulars = await client.getAllByType('popular')
-  const allProcedures = await client.getAllByType('procedure')
+  const allPopulars = await client.getAllByType("popular");
+  const allProcedures = await client.getAllByType("procedure");
 
-  const populars = allPopulars.map(popular => {
+  const populars = allPopulars.map((popular) => {
     return {
       slug: popular.uid,
       title: prismicH.asText(popular.data.title),
       image: popular.data.image.url,
-      content: prismicH.asText(popular.data.content)?.substring(0, 100)?.substring(0, 100) + "..."
-    }
-  })
+      content:
+        prismicH
+          .asText(popular.data.content)
+          ?.substring(0, 100)
+          ?.substring(0, 100) + "...",
+    };
+  });
 
-  const procedures = allProcedures.map(procedure => {
+  const procedures = allProcedures.map((procedure) => {
     return {
       slug: procedure.uid,
       title: prismicH.asText(procedure.data.title),
       image: procedure.data.image.url,
-      content: prismicH.asText(procedure.data.content)?.substring(0, 100) + "..."
-    }
-  })
+      content:
+        prismicH.asText(procedure.data.content)?.substring(0, 100) + "...",
+    };
+  });
 
   return {
     props: {
       populars,
-      procedures
+      procedures,
     },
-    revalidate: 24 * 60 * 60
-  }
-}
+    revalidate: 24 * 60 * 60,
+  };
+};

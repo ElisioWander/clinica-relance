@@ -23,8 +23,8 @@ export function MostPopulars({ populars }: MostPopularsProps) {
       <div className="w-full max-w-[1080px] h-[1500px] lg:h-[480px] lg:mt-12 px-2 py-5 pt-9 flex flex-col lg:flex-row items-center justify-around " >
         {populars &&
           populars.map((item) => (
-            <Link key={item.slug} href={`/posts/${item.slug}`}>
-              <a
+              <div
+                key={item.slug}
                 className="w-11/12 h-4/5 lg:w-80 lg:h-full flex items-center justify-center mb-8 lg:mb-0 rounded-sm bg-white-50 shadow-md scale-100 hover:scale-105 hover:border-2 hover:border-green-300 hover:shadow-xl transition-all ">
                 <div className="p-7" >
                   <div className="w-48 h-48 m-auto rounded-full border-2 shadow-sm">
@@ -41,10 +41,14 @@ export function MostPopulars({ populars }: MostPopularsProps) {
                     <p className="font-roboto font-light text-zinc-500 text-sm leading-5 text-center ">
                       {item.content}
                     </p>
+                    <Link  href={`/posts/${item.slug}`}>
+                      <a className="w-[130px] h-10 flex items-center justify-center text-white-100 text-base font-roboto font-semibold rounded-3xl mt-7 bg-green-300 hover:brightness-90 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white-100 ">
+                        Saiba mais
+                      </a>
+                    </Link>
                   </div>
                 </div>
-              </a>
-            </Link>
+              </div>
           ))}
       </div>
     </div>

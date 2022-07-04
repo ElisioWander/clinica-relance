@@ -19,7 +19,7 @@ export function Feedback() {
       slug: fb.uid,
       name: prismicH.asText(fb.data.name),
       image: fb.data.image.url,
-      comment: prismicH.asText(fb.data.comment)?.substring(0, 400)
+      comment: prismicH.asText(fb.data.comment)
     }
   })
 
