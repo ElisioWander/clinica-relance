@@ -13,7 +13,7 @@ export const SEO = {
     description,
     images: [
       {
-        url: "https://www.example.ie/og-image-01.jpg",
+        url: "",
         width: 800,
         height: 600,
         alt: title,

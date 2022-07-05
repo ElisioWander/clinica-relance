@@ -1,5 +1,4 @@
 import { Popover } from '@headlessui/react'
-import { MutableRefObject } from 'react';
 import { IoChatboxEllipsesOutline } from "react-icons/io5"
 import { Widget } from "./index"
 
