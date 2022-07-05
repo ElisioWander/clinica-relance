@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
-import { Pagination, Navigation, Autoplay } from "swiper";
+import { Pagination, Navigation, Autoplay, A11y } from "swiper";
 
 export function Introduction() {
   const [banners] = useAllPrismicDocumentsByType("banner") 
@@ -33,7 +33,7 @@ export function Introduction() {
         }}
         navigation={true}
         loop={true}
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[Autoplay, Pagination, Navigation, A11y]}
         className={`${`w-full h-full rounded-md`}, mySwiper`}
       >
         {banner &&

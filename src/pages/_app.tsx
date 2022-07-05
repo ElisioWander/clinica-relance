@@ -6,8 +6,9 @@ import { client } from "../services/prismic";
 import { Sidebar } from "../Components/Sidebar";
 import { SidebarContextProvider } from "../context/sidebarContext";
 import { ModalContextProvider } from "../context/ModalContext";
-
 import { MyPopover } from "../Components/Widget/MyPopover";
+import { DefaultSeo } from "next-seo"
+import { SEO } from "../../next-seo-config"
 
 import "../global.css";
 
@@ -17,6 +18,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <ModalContextProvider>
         <SidebarContextProvider>
           <PrismicProvider client={client}>
+            <DefaultSeo {...SEO} />
             <Sidebar />
             <Header />
             <MyPopover />

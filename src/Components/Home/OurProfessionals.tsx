@@ -39,7 +39,7 @@ export function OurProfessionals() {
 
           <Link href="/sobre" >
             <a
-              className="w-[130px] h-10 flex items-center justify-center text-white-100 text-base font-roboto font-semibold rounded-3xl mt-7 bg-green-300 hover:brightness-90 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white-100 "
+              className="w-[130px] h-10 flex items-center justify-center text-white-50 text-base font-roboto font-semibold rounded-3xl mt-7 bg-green-100 hover:bg-green-300 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white-100 "
             >
               Conheça elas
             </a>

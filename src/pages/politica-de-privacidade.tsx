@@ -1,14 +1,16 @@
-import Head from "next/head";
 import Link from "next/link";
+import { SeoPage } from "../Components/SeoPage";
 
 export default function PrivacyPolicy() {
   const paragraph = `py-2 px-2 md:px-5 text-zinc-600 text-sm md:text-base font-poppins  `;
 
   return (
     <>
-      <Head>
-        <title>Política de Privacidade | Relance</title>
-      </Head>
+      <SeoPage 
+        title="Política de Privacidade | Clínica Relance"
+        description="Conheça a política de privacidade da Clínica Relance"
+        url="https://clinicarelance.com.br/politica-de-privacidade" 
+      />
 
       <div className="w-full ">
         <div className="w-full h-[calc(100vh-15rem)] flex items-center justify-center bg-white-300 ">

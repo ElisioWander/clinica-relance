@@ -6,8 +6,8 @@ import { AiFillInstagram } from 'react-icons/ai'
 import { GetStaticProps } from "next";
 import { client } from "../services/prismic";
 import dynamic from "next/dynamic";
-import Head from "next/head";
 import * as prismicH from "@prismicio/helpers"
+import { SeoPage } from "../Components/SeoPage";
 
 
 const Map = dynamic(import("../Components/Map"), {ssr: false})
@@ -24,9 +24,11 @@ type LocationData = {
 export default function Contact({ location }: LocationData) {
   return (
     <>
-      <Head>
-        <title>Contato | Relance</title>
-      </Head>
+      <SeoPage 
+        title="Contato | Clínica Relance"
+        description="Fale com a Clínica Relance"
+        url="https://clinicarelance.com.br/contato" 
+      />
 
       <div className="w-full flex flex-col items-center md:animate-goVisible ">
         <h1

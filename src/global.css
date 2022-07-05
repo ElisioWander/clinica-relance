@@ -8,7 +8,7 @@ body {
 
 @layer {
     .swiper-pagination-bullet-active {
-        background-color: #74D57E !important;
+        background-color: #A0E1A7 !important;
    }
 
    .swiper-button-prev, .swiper-button-next {

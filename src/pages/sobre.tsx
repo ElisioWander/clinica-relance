@@ -4,7 +4,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
 
 import * as prismicH from "@prismicio/helpers";
-import Head from "next/head";
+import { SeoPage } from "../Components/SeoPage";
 
 type Summary = {
   title: string;
@@ -21,9 +21,11 @@ interface AboutProps {
 export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
   return (
     <>
-      <Head>
-        <title>Sobre | Relance</title>
-      </Head>
+      <SeoPage 
+        title="Sobre | Clínica Relance"
+        description="Conheça as profissionais da Clínica Relance"
+        url="https://clinicarelance.com.br/sobre" 
+      />
       <div className="w-ful md:animate-goVisible ">
         <h1
           className="p-7 relative bg-gray-300 text-center text-white-100 text-3xl font-merriweather

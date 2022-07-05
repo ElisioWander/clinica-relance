@@ -1,14 +1,16 @@
-import Head from "next/head";
 import Link from "next/link";
+import { SeoPage } from "../Components/SeoPage";
 
 export default function TermsOfService() {
   const paragraph = `py-2 px-2 md:px-5 text-zinc-600 text-sm md:text-base font-poppins  `;
 
   return (
     <>
-      <Head>
-        <title>Termo de Uso | Relance</title>
-      </Head>
+      <SeoPage 
+        title="Termo de Uso | Clínica Relance"
+        description="Conheça o termo de uso da Clínica Relance"
+        url="https://clinicarelance.com.br/termo-de-uso" 
+      />
       
       <div className="w-full ">
         <div className="w-full h-[calc(100vh-15rem)] flex items-center justify-center bg-white-300 ">

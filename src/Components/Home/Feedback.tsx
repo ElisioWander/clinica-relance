@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ImQuotesLeft } from "react-icons/im";
+import { useAllPrismicDocumentsByType } from "@prismicio/react";
 
 import * as prismicH from '@prismicio/helpers'
 
@@ -8,8 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
-import { Pagination, Navigation, Autoplay } from "swiper";
-import { useAllPrismicDocumentsByType } from "@prismicio/react";
+import { Pagination, Navigation, Autoplay, A11y } from "swiper";
 
 export function Feedback() {
   const [feedbacks] = useAllPrismicDocumentsByType('feedback')
@@ -28,7 +28,7 @@ export function Feedback() {
       <h2 className="mb-4">Feedback</h2>
       <div className="w-10 h-1 bg-gray-600 rounded-t-sm "></div>
       <Swiper
-        modules={[Pagination, Navigation, Autoplay]}
+        modules={[Pagination, Navigation, Autoplay, A11y]}
         spaceBetween={15}
         slidesPerView={1}
         navigation={true}
@@ -41,8 +41,8 @@ export function Feedback() {
           feedback.map((item) => (
             <SwiperSlide  key={item.slug} className="flex flex-col items-center justify-center " >
               <div className="w-4/5 h-4/5 p-5  flex flex-col items-center justify-around rounded-sm shadow-lg  ">
-                <div className="w-full md:w-4/5 flex bg-green-300 items-center justify-center gap-4 p-5 md:p-12 rounded-lg ">
-                  <div><ImQuotesLeft className="rotate-180 text-green-100 hidden sm:block sm:w-8 sm:h-8 md:w-12 md:h-12 " /></div>
+                <div className="w-full md:w-4/5 flex bg-green-100 items-center justify-center gap-4 p-5 md:p-12 rounded-lg ">
+                  <div><ImQuotesLeft className="rotate-180 text-green-300 hidden sm:block sm:w-8 sm:h-8 md:w-12 md:h-12 " /></div>
                   <p className="text-zinc-700 text-xs sm:text-sm font-poppins ">
                     {item.comment}
                   </p>

@@ -5,9 +5,9 @@ import { MostPopulars } from "../Components/Home/MostPopulars";
 import { OurProfessionals } from "../Components/Home/OurProfessionals";
 import { Procedures } from "../Components/Home/Procedures";
 import { client } from "../services/prismic";
-import Head from "next/head";
 
 import * as prismicH from "@prismicio/helpers";
+import { SeoPage } from "../Components/SeoPage";
 
 type PopularsData = Array<{
   slug: string;
@@ -31,9 +31,11 @@ interface HomeProps {
 export default function Home({ populars, procedures }: HomeProps) {
   return (
     <>
-      <Head>
-        <title>Home | Relance</title>
-      </Head>
+      <SeoPage 
+        title="Home | Clínica Relance" 
+        description="A Clínica Relance cuida da sua saúde e beleza"
+      />
+
       <div className="w-full box-border bg-white-50 flex flex-col items-center ">
         <Introduction />
 

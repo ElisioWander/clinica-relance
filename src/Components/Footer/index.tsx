@@ -8,13 +8,13 @@ export function Footer() {
 
   return (
     <div className="w-full flex flex-col p-8 text-white-300 bg-zinc-900 transition-all ">
-      <div className="text-center mb-2 text-4xl md:text-6xl font-merriweather shadow-sm font-bold " >
+      <div className="text-center mb-2 text-4xl md:text-6xl font-merriweather shadow-sm font-bold ">
         <span>
           Relance<span className="text-green-300 ml-[1px]">.</span>
         </span>
       </div>
       <div className="flex flex-col items-center ">
-        <div className="w-full py-5 flex flex-col " >
+        <div className="w-full py-5 flex flex-col ">
           <Link href="/">
             <a className={`${navigationStyle}`}> Home</a>
           </Link>

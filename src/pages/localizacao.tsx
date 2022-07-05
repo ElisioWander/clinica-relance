@@ -3,8 +3,8 @@ import { AiFillInstagram } from "react-icons/ai";
 import { GetStaticProps } from "next";
 import { client } from "../services/prismic";
 import dynamic from "next/dynamic";
-import Head from "next/head";
 import * as prismicH from "@prismicio/helpers"
+import { SeoPage } from "../Components/SeoPage";
 
 const Map = dynamic(import("../Components/Map"), { ssr: false });
 
@@ -24,9 +24,11 @@ interface LocationProps {
 export default function Location({ location }: LocationProps) {  
   return (
     <>
-      <Head>
-        <title>Localização | Relance</title>
-      </Head>
+      <SeoPage 
+        title="Localização | Clínica Relance"
+        description="R. Altivo Brandão, 626 - Uba, Ubá - MG, 36500-000"
+        url="https://clinicarelance.com.br/localizacao" 
+      />
 
       <section className="w-full h-full md:flex relative md:animate-goVisible ">
         <div className="w-full md:w-[420px] md:flex md:flex-col bg-white-300 transition-all ">
