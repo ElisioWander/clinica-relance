@@ -75,6 +75,7 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
                     fontSize={20}
                     className="text-green-100 md:w-7 md:h-7 "
                   />
+                  <span className="sr-only" >Whatsapp</span>
                 </a>
                 <a
                   className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`}
@@ -85,6 +86,7 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
                     fontSize={20}
                     className="text-green-100 md:w-7 md:h-7 "
                   />
+                  <span className="sr-only" >Instagram</span>
                 </a>
               </div>
             </div>
@@ -127,6 +129,7 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
                     fontSize={20}
                     className="text-green-100 md:w-7 md:h-7 "
                   />
+                  <span className="sr-only" >Whatsapp</span>
                 </a>
                 <a
                   className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`}
@@ -137,6 +140,7 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
                     fontSize={20}
                     className="text-green-100 md:w-7 md:h-7 "
                   />
+                  <span className="sr-only" >Instagram</span>
                 </a>
               </div>
             </div>

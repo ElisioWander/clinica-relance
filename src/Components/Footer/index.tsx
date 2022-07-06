@@ -50,6 +50,7 @@ export function Footer() {
               fontSize={28}
               className="text-zinc-700 md:w-7 md:h-7 "
             />
+            <span className="sr-only" >Whatsapp</span>
           </a>
           <a
             className={`${socialMediaStyle}`}
@@ -60,6 +61,7 @@ export function Footer() {
               fontSize={28}
               className="text-zinc-700 md:w-7 md:h-7 "
             />
+            <span className="sr-only" >Instagram</span>
           </a>
         </div>
       </div>

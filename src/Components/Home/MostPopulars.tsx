@@ -36,7 +36,7 @@ export function MostPopulars({ populars }: MostPopularsProps) {
                   </div>
 
                   <div className="flex flex-col items-center mt-6 " >
-                    <h3 className="mb-2 text-gray-700 text-lg font-poppins font-semibold " >{item.title}</h3>
+                    <span className="mb-2 text-gray-700 text-lg font-poppins font-semibold " >{item.title}</span>
 
                     <p className="font-roboto font-light text-zinc-500 text-sm leading-5 text-center ">
                       {item.content}
