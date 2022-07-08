@@ -32,8 +32,8 @@ export default function Home({ populars, procedures }: HomeProps) {
   return (
     <>
       <SeoPage 
-        title="Home | Clínica Relance" 
-        description="A Clínica Relance cuida da sua saúde e beleza"
+        title="Home | Centro Estético Relance" 
+        description="O Centro Estético Relance cuida da sua saúde e beleza"
       />
 
       <div className="w-full box-border bg-white-50 flex flex-col items-center ">

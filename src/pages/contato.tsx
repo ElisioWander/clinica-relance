@@ -24,8 +24,8 @@ export default function Contact({ location }: LocationData) {
   return (
     <>
       <SeoPage
-        title="Contato | Clínica Relance"
-        description="Fale com a Clínica Relance"
+        title="Contato | Centro Estético Relance"
+        description="Fale com o Centro Estético Relance"
         url="https://clinicarelance.com.br/contato"
       />
 

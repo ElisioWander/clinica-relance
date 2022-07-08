@@ -15,8 +15,8 @@ export default function Credits({ imagesCredtis }: CreditsProps) {
   return (
     <>
       <SeoPage 
-        title="Créditos | Clínica Relance"
-        description="Créditos por conteúdos de terceiros dentro do website Clínica Relance"
+        title="Créditos | Centr Estético Relance"
+        description="Créditos por conteúdos de terceiros dentro do website Centro Estético Relance"
         url="https://clinicarelance.com.br/creditos" 
       />
 

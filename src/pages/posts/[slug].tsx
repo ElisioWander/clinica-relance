@@ -2,6 +2,7 @@ import { GetServerSideProps } from "next";
 import { client } from "../../services/prismic";
 import * as prismicH from "@prismicio/helpers";
 import Head from "next/head";
+import { SeoPage } from "../../Components/SeoPage";
 
 interface SingleServiceProps {
   procedure: {
@@ -26,9 +27,10 @@ interface SingleServiceProps {
 export default function SingleService({ procedure }: SingleServiceProps) {
   return (
     <>
-      <Head>
-        <title>Procedimento | {procedure.slug}</title>
-      </Head>
+      <SeoPage 
+        title={`Procedimento | ${procedure.slug}`} 
+        description={`Centro Estético Relance | ${procedure.slug}`} 
+      />
 
       <section
         className="w-full py-14 md:animate-goVisible "

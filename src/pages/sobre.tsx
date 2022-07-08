@@ -22,8 +22,8 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
   return (
     <>
       <SeoPage 
-        title="Sobre | Clínica Relance"
-        description="Conheça as profissionais da Clínica Relance"
+        title="Sobre | Centro Estético Relance"
+        description="Conheça as profissionais do Centro Estético Relance"
         url="https://clinicarelance.com.br/sobre" 
       />
       <div className="w-ful md:animate-goVisible ">

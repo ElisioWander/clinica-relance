@@ -1,4 +1,4 @@
-const title = "clinica relance - saude e beleza";
+const title = "Centro Estético Relance - Saude e Beleza";
 const description = "Cuidamos de sua saúde e aparência";
 
 export const SEO = {
@@ -13,7 +13,7 @@ export const SEO = {
     description,
     images: [
       {
-        url: "",
+        url: "./public/images/logo.ico",
         width: 800,
         height: 600,
         alt: title,

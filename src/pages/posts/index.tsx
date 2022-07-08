@@ -3,6 +3,7 @@ import { client } from "../../services/prismic";
 import * as prismicH from "@prismicio/helpers"
 import Link from "next/link";
 import Head from "next/head";
+import { SeoPage } from "../../Components/SeoPage";
 
 interface ServicesProps {
   procedures: Array<{
@@ -16,9 +17,10 @@ interface ServicesProps {
 export default function Services({ procedures }: ServicesProps) {
   return (
     <div className="w-full bg-white-300 flex flex-col md:animate-goVisible ">
-      <Head>
-        <title>Procedimentos | Relance</title>
-      </Head>
+      <SeoPage  
+        title="Procedimentos | Centro Estético Relance"
+        description="Todos os procedimentos fornecidos pelos profissionais do Centro Estético Relance"
+      />
 
       <h1
         className="w-full p-7 relative bg-gray-300 text-center text-white-100 text-3xl font-merriweather
@@ -74,6 +76,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       procedures
     },
-    revalidate: 60 * 60 //1 hour,
+    revalidate: 60 * 60 * 24 //24 hour,
   }
 }

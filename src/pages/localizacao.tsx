@@ -25,8 +25,8 @@ export default function Location({ location }: LocationProps) {
   return (
     <>
       <SeoPage
-        title="Localização | Clínica Relance"
-        description="R. Altivo Brandão, 626 - Uba, Ubá - MG, 36500-000"
+        title="Localização | Centro Estético Relance"
+        description="Av. Padre Arnaldo Jansen, 626 - Uba, Ubá - MG, 36500-000"
         url="https://clinicarelance.com.br/localizacao"
       />
 

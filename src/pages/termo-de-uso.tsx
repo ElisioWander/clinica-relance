@@ -7,8 +7,8 @@ export default function TermsOfService() {
   return (
     <>
       <SeoPage 
-        title="Termo de Uso | Clínica Relance"
-        description="Conheça o termo de uso da Clínica Relance"
+        title="Termo de Uso | Centro Estético Relance"
+        description="Conheça o termo de uso do Centro Estético Relance"
         url="https://clinicarelance.com.br/termo-de-uso" 
       />
       
