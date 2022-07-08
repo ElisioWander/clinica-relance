@@ -6,10 +6,10 @@ export default function PrivacyPolicy() {
 
   return (
     <>
-      <SeoPage 
+      <SeoPage
         title="Política de Privacidade | Centro Estético Relance"
         description="Conheça a política de privacidade do Centro Estético Relance"
-        url="https://clinicarelance.com.br/politica-de-privacidade" 
+        url="https://clinicarelance.com.br/politica-de-privacidade"
       />
 
       <div className="w-full ">

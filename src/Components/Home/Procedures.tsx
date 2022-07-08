@@ -7,6 +7,7 @@ import "swiper/css/autoplay";
 
 import { Pagination, Navigation, Autoplay, A11y } from "swiper";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ProceduresProps {
   procedures: Array<{
@@ -49,10 +50,12 @@ export function Procedures({ procedures }: ProceduresProps) {
               className="flex items-center justify-center "
             >
               <div className="w-11/12 h-[500px] md:w-full lflex items-center justify-center mb-8 rounded-sm shadow-md hover:shadow-xl relative overflow-hidden transition-all ">
-                <img
+                <Image 
                   src={item.image}
                   alt="microderm-peeling-poster"
-                  className="w-full h-full object-cover brightness-75 hover:brightness-100 absolute transition-all duration-1000 ease-in-out trasform scale-100 hover:scale-150 "
+                  width={740}
+                  height={740}
+                  className="w-full h-full bg-no-repeat object-cover brightness-75 hover:brightness-100 absolute transition-all duration-1000 ease-in-out trasform scale-100 hover:scale-150 "
                 />
 
                 <div className="w-full flex flex-col items-center absolute bottom-0 p-5 bg-white-100 ">

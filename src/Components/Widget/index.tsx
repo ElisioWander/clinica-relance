@@ -1,9 +1,7 @@
 import { CloseButton } from "./CloseButton";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { AiOutlineMail } from "react-icons/ai";
-import { Popover } from "@headlessui/react";
 import Link from "next/link";
-import { MutableRefObject } from "react";
 
 const sendMessageType = {
   WHATSAPP: {

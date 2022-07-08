@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ImQuotesLeft } from "react-icons/im";
 import { useAllPrismicDocumentsByType } from "@prismicio/react";
-
 import * as prismicH from '@prismicio/helpers'
 
 import "swiper/css";
@@ -10,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
 import { Pagination, Navigation, Autoplay, A11y } from "swiper";
+import Image from "next/image";
 
 export function Feedback() {
   const [feedbacks] = useAllPrismicDocumentsByType('feedback')
@@ -49,9 +49,11 @@ export function Feedback() {
                 </div>
                 <div className="w-full h-1/3 flex flex-col items-center p-2 justify-between ">
                   <div className="w-14 h-14 bg-green-300 rounded-full border-2 border-green-300 " >
-                    <img
+                    <Image 
                       src={item.image}
                       alt="banner"
+                      width={746}
+                      height={749}
                       className="w-full h-full object-cover rounded-full "
                     />
                   </div>

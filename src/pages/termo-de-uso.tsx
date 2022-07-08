@@ -6,12 +6,12 @@ export default function TermsOfService() {
 
   return (
     <>
-      <SeoPage 
+      <SeoPage
         title="Termo de Uso | Centro Estético Relance"
         description="Conheça o termo de uso do Centro Estético Relance"
-        url="https://clinicarelance.com.br/termo-de-uso" 
+        url="https://clinicarelance.com.br/termo-de-uso"
       />
-      
+
       <div className="w-full ">
         <div className="w-full h-[calc(100vh-15rem)] flex items-center justify-center bg-white-300 ">
           <h1 className="text-5xl md:text-7xl text-center text-zinc-900 font-bold font-poppins transition-all ">

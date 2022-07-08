@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface MostPopularsProps {
@@ -28,9 +29,11 @@ export function MostPopulars({ populars }: MostPopularsProps) {
                 className="w-11/12 h-4/5 lg:w-80 lg:h-full flex items-center justify-center mb-8 lg:mb-0 rounded-sm bg-white-50 shadow-md scale-100 hover:scale-105 hover:border-2 hover:border-green-300 hover:shadow-xl transition-all ">
                 <div className="p-7" >
                   <div className="w-48 h-48 m-auto rounded-full border-2 shadow-sm">
-                    <img
+                    <Image 
                       src={item.image}
                       alt="microderm-peeling-poster"
+                      width={740}
+                      height={740}
                       className="w-full h-full object-cover rounded-full "
                     />
                   </div>
@@ -38,7 +41,7 @@ export function MostPopulars({ populars }: MostPopularsProps) {
                   <div className="flex flex-col items-center mt-6 " >
                     <span className="mb-2 text-gray-700 text-lg font-poppins font-semibold " >{item.title}</span>
 
-                    <p className="font-roboto font-light text-zinc-500 text-sm leading-5 text-center ">
+                    <p className="px-2 font-roboto font-light text-zinc-500 text-sm leading-5 text-center ">
                       {item.content}
                     </p>
                     <Link  href={`/posts/${item.slug}`}>

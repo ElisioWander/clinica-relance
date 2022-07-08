@@ -4,6 +4,7 @@ import { createContext, ReactNode, useContext, useEffect, useState } from "react
 type SidebarContextData = {
   sidebarActive: boolean;
   handleOpenSidebar: () => void;
+  handleCloseSidebar: () => void;
 }
 
 interface SidebarContextProps {
@@ -32,8 +33,12 @@ export function SidebarContextProvider({ children }: SidebarContextProps) {
     setSidebarActive(!sidebarActive)
   }
 
+  function handleCloseSidebar() {
+    setSidebarActive(false)
+  }
+
   return (
-    <SidebarContext.Provider value={{ sidebarActive, handleOpenSidebar }} >
+    <SidebarContext.Provider value={{ sidebarActive, handleOpenSidebar, handleCloseSidebar }} >
       { children }
     </SidebarContext.Provider>
   )

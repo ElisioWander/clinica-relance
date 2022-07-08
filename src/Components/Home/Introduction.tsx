@@ -9,15 +9,15 @@ import "swiper/css/autoplay";
 import { Pagination, Navigation, Autoplay, A11y } from "swiper";
 
 export function Introduction() {
-  const [banners] = useAllPrismicDocumentsByType("banner") 
+  const [banners] = useAllPrismicDocumentsByType("banner");
 
-  const banner = banners?.map(item => {
+  const banner = banners?.map((item) => {
     return {
       id: item.id,
       slug: item.uid,
       image: item.data.image.url,
-    }
-  })
+    };
+  });
 
   return (
     <div className="w-full md:h-[calc(100vh-10rem)] md:animate-goVisible bg-zinc-800">
@@ -47,7 +47,7 @@ export function Introduction() {
                 />
               </section>
             </SwiperSlide>
-          )) }
+          ))}
       </Swiper>
     </div>
   );

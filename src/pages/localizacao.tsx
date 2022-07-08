@@ -2,9 +2,10 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
 import { GetStaticProps } from "next";
 import { client } from "../services/prismic";
+import { SeoPage } from "../Components/SeoPage";
 import dynamic from "next/dynamic";
 import * as prismicH from "@prismicio/helpers";
-import { SeoPage } from "../Components/SeoPage";
+import Image from "next/image";
 
 const Map = dynamic(import("../Components/Map"), { ssr: false });
 
@@ -33,10 +34,12 @@ export default function Location({ location }: LocationProps) {
       <section className="w-full h-full md:flex relative md:animate-goVisible ">
         <div className="w-full md:w-[420px] md:flex md:flex-col bg-white-300 transition-all ">
           <div className="w-full h-64 ">
-            <img
-              className="w-full h-full object-cover "
+            <Image
+              className="object-cover "
               src={location.image}
               alt="imagem do relance studio"
+              width={953}
+              height={750}
             />
           </div>
 
@@ -95,7 +98,7 @@ export default function Location({ location }: LocationProps) {
                 fontSize={20}
                 className="text-green-100 md:w-7 md:h-7 "
               />
-              <span className="sr-only" >Whatsapp</span>
+              <span className="sr-only">Whatsapp</span>
             </a>
             <a
               className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`}
@@ -106,7 +109,7 @@ export default function Location({ location }: LocationProps) {
                 fontSize={20}
                 className="text-green-100 md:w-7 md:h-7 "
               />
-              <span className="sr-only" >Instagram</span>
+              <span className="sr-only">Instagram</span>
             </a>
           </div>
         </div>

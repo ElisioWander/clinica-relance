@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next";
 import { client } from "../services/prismic";
-import * as prismicH from "@prismicio/helpers";
 import { SeoPage } from "../Components/SeoPage";
+import * as prismicH from "@prismicio/helpers";
 
 interface CreditsProps {
   imagesCredtis: Array<{
@@ -14,10 +14,10 @@ interface CreditsProps {
 export default function Credits({ imagesCredtis }: CreditsProps) {
   return (
     <>
-      <SeoPage 
+      <SeoPage
         title="Créditos | Centr Estético Relance"
         description="Créditos por conteúdos de terceiros dentro do website Centro Estético Relance"
-        url="https://clinicarelance.com.br/creditos" 
+        url="https://clinicarelance.com.br/creditos"
       />
 
       <div className="w-full">

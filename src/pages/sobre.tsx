@@ -2,9 +2,9 @@ import { GetStaticProps } from "next";
 import { client } from "../services/prismic";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
-
-import * as prismicH from "@prismicio/helpers";
 import { SeoPage } from "../Components/SeoPage";
+import Image from "next/image";
+import * as prismicH from "@prismicio/helpers";
 
 type Summary = {
   title: string;
@@ -21,10 +21,10 @@ interface AboutProps {
 export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
   return (
     <>
-      <SeoPage 
+      <SeoPage
         title="Sobre | Centro Estético Relance"
         description="Conheça as profissionais do Centro Estético Relance"
-        url="https://clinicarelance.com.br/sobre" 
+        url="https://clinicarelance.com.br/sobre"
       />
       <div className="w-ful md:animate-goVisible ">
         <h1
@@ -46,11 +46,15 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
                   backgroundRepeat: "no-repeat",
                 }}
               >
-                <img
-                  src={`${tamyrisSummary.image}`}
-                  alt="foto de perfil"
-                  className="absolute w-[260px] h-[260px] md:w-[280px] md:h-[280px] left-10 md:left-5 object-cover rounded-full transition-all "
-                />
+                <div className="absolute w-[260px] h-[260px] md:w-[280px] md:h-[280px] left-10 md:left-5">
+                  <Image
+                    src={`${tamyrisSummary.image}`}
+                    alt="foto de perfil"
+                    width={280}
+                    height={280}
+                    className="object-cover rounded-full transition-all "
+                  />
+                </div>
               </div>
             </div>
 
@@ -75,7 +79,7 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
                     fontSize={20}
                     className="text-green-100 md:w-7 md:h-7 "
                   />
-                  <span className="sr-only" >Whatsapp</span>
+                  <span className="sr-only">Whatsapp</span>
                 </a>
                 <a
                   className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`}
@@ -86,7 +90,7 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
                     fontSize={20}
                     className="text-green-100 md:w-7 md:h-7 "
                   />
-                  <span className="sr-only" >Instagram</span>
+                  <span className="sr-only">Instagram</span>
                 </a>
               </div>
             </div>
@@ -101,11 +105,15 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
                   backgroundRepeat: "no-repeat",
                 }}
               >
-                <img
-                  src={`${amandaSummary.image}`}
-                  alt="foto de perfil"
-                  className="absolute w-[260px] h-[260px] md:w-[280px] md:h-[280px] left-10 md:left-5 object-cover rounded-full transition-all "
-                />
+                <div className="absolute w-[260px] h-[260px] md:w-[280px] md:h-[280px] left-10 md:left-5 ">
+                  <Image
+                    src={`${amandaSummary.image}`}
+                    alt="foto de perfil"
+                    width={280}
+                    height={280}
+                    className="object-cover rounded-full transition-all "
+                  />
+                </div>
               </div>
             </div>
 
@@ -129,7 +137,7 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
                     fontSize={20}
                     className="text-green-100 md:w-7 md:h-7 "
                   />
-                  <span className="sr-only" >Whatsapp</span>
+                  <span className="sr-only">Whatsapp</span>
                 </a>
                 <a
                   className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`}
@@ -140,7 +148,7 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
                     fontSize={20}
                     className="text-green-100 md:w-7 md:h-7 "
                   />
-                  <span className="sr-only" >Instagram</span>
+                  <span className="sr-only">Instagram</span>
                 </a>
               </div>
             </div>

@@ -1,9 +1,8 @@
 import { GetStaticProps } from "next";
 import { client } from "../../services/prismic";
-import * as prismicH from "@prismicio/helpers"
-import Link from "next/link";
-import Head from "next/head";
 import { SeoPage } from "../../Components/SeoPage";
+import * as prismicH from "@prismicio/helpers";
+import Link from "next/link";
 
 interface ServicesProps {
   procedures: Array<{
@@ -11,13 +10,13 @@ interface ServicesProps {
     image: string;
     title: string;
     content: string;
-  }>
+  }>;
 }
 
 export default function Services({ procedures }: ServicesProps) {
   return (
     <div className="w-full bg-white-300 flex flex-col md:animate-goVisible ">
-      <SeoPage  
+      <SeoPage
         title="Procedimentos | Centro Estético Relance"
         description="Todos os procedimentos fornecidos pelos profissionais do Centro Estético Relance"
       />
@@ -32,50 +31,54 @@ export default function Services({ procedures }: ServicesProps) {
       </h1>
 
       <main className="w-full max-w-[1080px] m-auto py-20 md:px-5 flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 items-center justify-center md:animate-goTop ">
-        { procedures && 
-          procedures.map(procedure => (
+        {procedures &&
+          procedures.map((procedure) => (
             <Link key={procedure.slug} href={`/posts/${procedure.slug}`}>
-            <a
-              className="w-11/12 h-[380px] md:w-full flex items-center justify-center mb-8 rounded-sm shadow-md hover:shadow-xl relative overflow-hidden hover:scale-105 transition-all"
-              style={{
-                'backgroundImage': `url(${procedure.image})`,
-                'backgroundPosition': 'center',
-                'backgroundSize': 'cover',
-              }}
-            >
-              <div className="w-full h-full flex flex-col items-center justify-center p-5 text-center text-white-100 md:text-transparent md:hover:text-white-300 bg-zinc-900 md:bg-transparent md:hover:bg-zinc-900 bg-opacity-70 md:hover:bg-opacity-60 transition-all duration-500" >
-                <p className="text-sm font-poppins tracking-wide "
-                >
-                  <span className="text-2xl pb-1 font-merriweather block text-center transition-all duration-500" >{procedure.title}</span>
-                  {procedure.content}
-                  
-                  <span className="mt-5 text-base block  " >Click para saber mais</span>
-                </p>
-              </div>
-            </a>
-          </Link>
-          )) }
+              <a
+                className="w-11/12 h-[380px] md:w-full flex items-center justify-center mb-8 rounded-sm shadow-md hover:shadow-xl relative overflow-hidden hover:scale-105 transition-all"
+                style={{
+                  backgroundImage: `url(${procedure.image})`,
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+              >
+                <div className="w-full h-full flex flex-col items-center justify-center p-5 text-center text-white-100 md:text-transparent md:hover:text-white-300 bg-zinc-900 md:bg-transparent md:hover:bg-zinc-900 bg-opacity-70 md:hover:bg-opacity-60 transition-all duration-500">
+                  <p className="text-sm font-poppins tracking-wide ">
+                    <span className="text-2xl pb-1 font-merriweather block text-center transition-all duration-500">
+                      {procedure.title}
+                    </span>
+                    {procedure.content}
+
+                    <span className="mt-5 text-base block  ">
+                      Click para saber mais
+                    </span>
+                  </p>
+                </div>
+              </a>
+            </Link>
+          ))}
       </main>
     </div>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allProcedures = await client.getAllByType('procedure')
+  const allProcedures = await client.getAllByType("procedure");
 
-  const procedures = allProcedures.map(procedure => {
+  const procedures = allProcedures.map((procedure) => {
     return {
       slug: procedure.uid,
       title: prismicH.asText(procedure.data.title),
       image: procedure.data.image.url,
-      content: prismicH.asText(procedure.data.content)?.substring(0, 100) + "..."
-    }
-  })
+      content:
+        prismicH.asText(procedure.data.content)?.substring(0, 100) + "...",
+    };
+  });
 
   return {
     props: {
-      procedures
+      procedures,
     },
-    revalidate: 60 * 60 * 24 //24 hour,
-  }
-}
+    revalidate: 60 * 60 * 24, //24 hour,
+  };
+};

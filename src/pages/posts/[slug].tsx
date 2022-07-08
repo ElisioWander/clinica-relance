@@ -1,8 +1,7 @@
 import { GetServerSideProps } from "next";
 import { client } from "../../services/prismic";
-import * as prismicH from "@prismicio/helpers";
-import Head from "next/head";
 import { SeoPage } from "../../Components/SeoPage";
+import * as prismicH from "@prismicio/helpers";
 
 interface SingleServiceProps {
   procedure: {
@@ -27,9 +26,9 @@ interface SingleServiceProps {
 export default function SingleService({ procedure }: SingleServiceProps) {
   return (
     <>
-      <SeoPage 
-        title={`Procedimento | ${procedure.slug}`} 
-        description={`Centro Estético Relance | ${procedure.slug}`} 
+      <SeoPage
+        title={`Procedimento | ${procedure.slug}`}
+        description={`Centro Estético Relance | ${procedure.slug}`}
       />
 
       <section
@@ -52,8 +51,7 @@ export default function SingleService({ procedure }: SingleServiceProps) {
             </div>
             <div className="w-full p-5 pb-10 md:p-10 flex flex-col justify-center bg-white-300 ">
               <h1
-                className="py-4 md:m-0 text-center md:text-start 
-           text-2xl lg:text-4xl text-gray-300 font-merriweather "
+                className="py-4 md:m-0 text-center md:text-start text-2xl lg:text-4xl text-gray-300 font-merriweather "
               >
                 {procedure.title}
               </h1>

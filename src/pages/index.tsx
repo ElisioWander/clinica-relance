@@ -5,7 +5,6 @@ import { MostPopulars } from "../Components/Home/MostPopulars";
 import { OurProfessionals } from "../Components/Home/OurProfessionals";
 import { Procedures } from "../Components/Home/Procedures";
 import { client } from "../services/prismic";
-
 import * as prismicH from "@prismicio/helpers";
 import { SeoPage } from "../Components/SeoPage";
 

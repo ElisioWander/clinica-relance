@@ -5,9 +5,9 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
 import { GetStaticProps } from "next";
 import { client } from "../services/prismic";
+import { SeoPage } from "../Components/SeoPage";
 import dynamic from "next/dynamic";
 import * as prismicH from "@prismicio/helpers";
-import { SeoPage } from "../Components/SeoPage";
 
 const Map = dynamic(import("../Components/Map"), { ssr: false });
 
