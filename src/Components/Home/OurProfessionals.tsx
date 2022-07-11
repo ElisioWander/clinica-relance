@@ -7,7 +7,7 @@ export function OurProfessionals() {
     
   const summary = {
     slug: document?.uid,
-    content: prismicH.asText(document?.data.content)?.substring(0, 500) + "...",
+    content: prismicH.asText(document?.data.content),
     image: document?.data.image.url
   }
 
