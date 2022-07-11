@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import { client } from "../services/prismic";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
@@ -159,7 +159,7 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const summaryOne = await client.getSingle("amandasummary");
   const summaryTwo = await client.getSingle("tamyrissummary");
 
