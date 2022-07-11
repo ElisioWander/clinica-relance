@@ -52,7 +52,7 @@ export function Procedures({ procedures }: ProceduresProps) {
                 <img
                   src={item.image}
                   alt="microderm-peeling-poster"
-                  className="w-[280px] h-[280px] object-cover brightness-75 hover:brightness-100 transition-all duration-1000 ease-in-out trasform scale-100 hover:scale-150 "
+                  className="w-[570px] h-[320px] lg:w-[280px] lg:h-[280px] object-cover brightness-75 hover:brightness-100 transition-all duration-1000 ease-in-out trasform scale-100 hover:scale-150 "
                 />
 
                 <div className="w-full flex flex-col items-center absolute bottom-0 p-5 bg-white-100 ">
