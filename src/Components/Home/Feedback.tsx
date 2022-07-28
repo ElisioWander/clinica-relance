@@ -1,25 +1,25 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { ImQuotesLeft } from "react-icons/im";
-import { useAllPrismicDocumentsByType } from "@prismicio/react";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { ImQuotesLeft } from 'react-icons/im'
+import { useAllPrismicDocumentsByType } from '@prismicio/react'
 import * as prismicH from '@prismicio/helpers'
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/autoplay";
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+import 'swiper/css/autoplay'
 
-import { Pagination, Navigation, Autoplay, A11y } from "swiper";
-import Image from "next/image";
+import { Pagination, Navigation, Autoplay, A11y } from 'swiper'
+import Image from 'next/image'
 
 export function Feedback() {
   const [feedbacks] = useAllPrismicDocumentsByType('feedback')
 
-  const feedback = feedbacks?.map(fb => {
+  const feedback = feedbacks?.map((fb) => {
     return {
       slug: fb.uid,
       name: prismicH.asText(fb.data.name),
       image: fb.data.image.url,
-      comment: prismicH.asText(fb.data.comment)
+      comment: prismicH.asText(fb.data.comment),
     }
   })
 
@@ -39,17 +39,22 @@ export function Feedback() {
       >
         {feedback &&
           feedback.map((item) => (
-            <SwiperSlide  key={item.slug} className="flex flex-col items-center justify-center " >
+            <SwiperSlide
+              key={item.slug}
+              className="flex flex-col items-center justify-center "
+            >
               <div className="w-4/5 h-4/5 p-5  flex flex-col items-center justify-around rounded-sm shadow-lg  ">
                 <div className="w-full md:w-4/5 flex bg-green-100 items-center justify-center gap-4 p-5 md:p-12 rounded-lg ">
-                  <div><ImQuotesLeft className="rotate-180 text-green-300 hidden sm:block sm:w-8 sm:h-8 md:w-12 md:h-12 " /></div>
+                  <div>
+                    <ImQuotesLeft className="rotate-180 text-green-300 hidden sm:block sm:w-8 sm:h-8 md:w-12 md:h-12 " />
+                  </div>
                   <p className="text-zinc-700 text-xs sm:text-sm font-poppins ">
                     {item.comment}
                   </p>
                 </div>
                 <div className="w-full h-1/3 flex flex-col items-center p-2 justify-between ">
-                  <div className="w-14 h-14 bg-green-300 rounded-full border-2 border-green-300 " >
-                    <Image 
+                  <div className="w-14 h-14 bg-green-300 rounded-full border-2 border-green-300 ">
+                    <Image
                       src={item.image}
                       alt="banner"
                       width={746}
@@ -58,13 +63,17 @@ export function Feedback() {
                     />
                   </div>
 
-                  <span className="text-sm text-zinc-700 font-roboto font-bold" >{item.name}</span>
-                  <span className="text-xs text-zinc-500 font-roboto " >Cliente ❤</span>
+                  <span className="text-sm text-zinc-700 font-roboto font-bold">
+                    {item.name}
+                  </span>
+                  <span className="text-xs text-zinc-500 font-roboto ">
+                    Cliente ❤
+                  </span>
                 </div>
               </div>
             </SwiperSlide>
           ))}
       </Swiper>
     </div>
-  );
+  )
 }

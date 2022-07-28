@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { SeoPage } from "../Components/SeoPage";
+import Link from 'next/link'
+import { SeoPage } from '../Components/SeoPage'
 
 export default function TermsOfService() {
-  const paragraph = `py-2 px-2 md:px-5 text-zinc-600 text-sm md:text-base font-poppins  `;
+  const paragraph = `py-2 px-2 md:px-5 text-zinc-600 text-sm md:text-base font-poppins  `
 
   return (
     <>
@@ -21,14 +21,14 @@ export default function TermsOfService() {
         <section className="w-full max-w-[1024px] m-auto py-14 px-5 ">
           <h3>1. Termos</h3>
           <p className={`${paragraph}`}>
-            Ao acessar ao site{" "}
+            Ao acessar ao site{' '}
             <Link href="https://clinicarelance.com.br">
               <a className="text-blue-400 hover:underline underline-offset-2 transition-all ">
                 Clínica Relance
               </a>
             </Link>
             , concorda em cumprir estes termos de serviço, todas as leis e
-            regulamentos aplicáveis ​​e concorda que é responsável pelo
+            regulamentos aplicáveis e concorda que é responsável pelo
             cumprimento de todas as leis locais aplicáveis. Se você não
             concordar com algum desses termos, está proibido de usar ou acessar
             este site. Os materiais contidos neste site são protegidos pelas
@@ -40,24 +40,24 @@ export default function TermsOfService() {
             materiais (informações ou software) no site Clínica Relance , apenas
             para visualização transitória pessoal e não comercial. Esta é a
             concessão de uma licença, não uma transferência de título e, sob
-            esta licença, você não pode:{" "}
+            esta licença, você não pode:{' '}
           </p>
           <ol className={`${paragraph} px-5 md:px-8`}>
             <li>1 - modificar ou copiar os materiais; </li>
             <li>
               2 - usar os materiais para qualquer finalidade comercial ou para
-              exibição pública (comercial ou não comercial);{" "}
+              exibição pública (comercial ou não comercial);{' '}
             </li>
             <li>
               3 - tentar descompilar ou fazer engenharia reversa de qualquer
-              software contido no site Clínica Relance;{" "}
+              software contido no site Clínica Relance;{' '}
             </li>
             <li>
               4 - remover quaisquer direitos autorais ou outras notações de
-              propriedade dos materiais; ou{" "}
+              propriedade dos materiais; ou{' '}
             </li>
             <li>
-              5 - transferir os materiais para outra pessoa ou 'espelhe' os
+              5 - transferir os materiais para outra pessoa ou espelhe os
               materiais em qualquer outro servidor.
             </li>
           </ol>
@@ -71,8 +71,8 @@ export default function TermsOfService() {
           <h3>3. Isenção de responsabilidade</h3>
           <ol className={`${paragraph}`}>
             <li>
-              1 - Os materiais no site da Clínica Relance são fornecidos 'como
-              estão'. A Clínica Relance não oferece garantias, expressas ou
+              1 - Os materiais no site da Clínica Relance são fornecidos como
+              estão. A Clínica Relance não oferece garantias, expressas ou
               implícitas, e, por este meio, isenta e nega todas as outras
               garantias, incluindo, sem limitação, garantias implícitas ou
               condições de comercialização, adequação a um fim específico ou não
@@ -80,7 +80,7 @@ export default function TermsOfService() {
             </li>
             <li>
               2 - Além disso, a Clínica Relance não garante ou faz qualquer
-              representação relativa à precisão, aos resultados prováveis ​​ou à
+              representação relativa à precisão, aos resultados prováveis ou à
               confiabilidade do uso dos materiais em seu site ou de outra forma
               relacionado a esses materiais ou em sites vinculados a este site.
             </li>
@@ -88,7 +88,7 @@ export default function TermsOfService() {
           <h3>4. Limitações</h3>
           <p className={`${paragraph}`}>
             Em nenhum caso a Clínica Relance ou seus fornecedores serão
-            responsáveis ​​por quaisquer danos (incluindo, sem limitação, danos
+            responsáveis por quaisquer danos (incluindo, sem limitação, danos
             por perda de dados ou lucro ou devido a interrupção dos negócios)
             decorrentes do uso ou da incapacidade de usar os materiais na
             Clínica Relance, mesmo que a Clínica Relance ou um representante
@@ -130,5 +130,5 @@ export default function TermsOfService() {
         </section>
       </div>
     </>
-  );
+  )
 }

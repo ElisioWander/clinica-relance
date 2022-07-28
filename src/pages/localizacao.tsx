@@ -1,28 +1,34 @@
-import { IoLogoWhatsapp } from "react-icons/io";
-import { AiFillInstagram } from "react-icons/ai";
-import { GetStaticProps } from "next";
-import { client } from "../services/prismic";
-import { SeoPage } from "../Components/SeoPage";
-import dynamic from "next/dynamic";
-import * as prismicH from "@prismicio/helpers";
-import Image from "next/image";
+import { IoLogoWhatsapp } from 'react-icons/io'
+import { AiFillInstagram } from 'react-icons/ai'
+import { GetStaticProps } from 'next'
+import { client } from '../services/prismic'
+import { SeoPage } from '../Components/SeoPage'
+import { SocialMedia } from '../Components/SocialMedia'
+import { SocialMediaLink } from '../Components/SocialMedia/SocialMediaLink'
+import { LocationInfo } from '../Components/LocationInfo'
+import { LocationItem } from '../Components/LocationInfo/LocationItem'
+import dynamic from 'next/dynamic'
+import Image from 'next/image'
+import * as prismicH from '@prismicio/helpers'
 
-const Map = dynamic(import("../Components/Map"), { ssr: false });
+const Map = dynamic(import('../Components/Map'), { ssr: false })
 
 interface LocationProps {
   location: {
-    image: string;
-    title: string;
-    state: string;
-    city: string;
-    street: string;
-    neighborhood: string;
-    number: string;
-    cellphone: string;
-  };
+    image: string
+    title: string
+    state: string
+    city: string
+    street: string
+    neighborhood: string
+    number: string
+    cellphone: string
+  }
 }
 
 export default function Location({ location }: LocationProps) {
+  const socialMediaStyle = `w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`
+
   return (
     <>
       <SeoPage
@@ -48,81 +54,51 @@ export default function Location({ location }: LocationProps) {
               {location.title}
             </h1>
 
-            <ul className="text-zinc-500 text-sm lg:text-[15px] font-poppins transition-all ">
-              <li>
-                <strong className="text-zinc-700 font-poppins text-base lg:text-md font-medium ">
-                  Estado:
-                </strong>{" "}
-                {location.state}
-              </li>
-              <li>
-                <strong className="text-zinc-700 font-poppins text-base lg:text-md font-medium ">
-                  Cidade:
-                </strong>{" "}
-                {location.city}
-              </li>
-              <li>
-                <strong className="text-zinc-700 font-poppins text-base lg:text-md font-medium ">
-                  Rua:
-                </strong>{" "}
-                {location.street}
-              </li>
-              <li>
-                <strong className="text-zinc-700 font-poppins text-base lg:text-md font-medium ">
-                  Bairro:
-                </strong>{" "}
-                {location.neighborhood}
-              </li>
-              <li>
-                <strong className="text-zinc-700 font-poppins text-base lg:text-md font-medium ">
-                  Número:
-                </strong>{" "}
-                {location.number}
-              </li>
-              <li>
-                <strong className="text-zinc-700 font-poppins text-base lg:text-md font-medium ">
-                  Telefone:
-                </strong>{" "}
-                {location.cellphone}
-              </li>
-            </ul>
+            <LocationInfo>
+              <LocationItem title="Estado" name={location.state} />
+              <LocationItem title="Cidade" name={location.city} />
+              <LocationItem title="Rua" name={location.street} />
+              <LocationItem title="Bairro" name={location.neighborhood} />
+              <LocationItem title="Número" name={location.number} />
+              <LocationItem title="Telefone" name={location.cellphone} />
+            </LocationInfo>
           </div>
 
-          <div className="w-full flex pb-4 pl-5">
-            <a
-              className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`}
-              target="_blank"
-              href="https://api.whatsapp.com/send/?phone=5532998001512"
-            >
-              <IoLogoWhatsapp
-                fontSize={20}
-                className="text-green-100 md:w-7 md:h-7 "
-              />
-              <span className="sr-only">Whatsapp</span>
-            </a>
-            <a
-              className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`}
-              target="_blank"
-              href="https://www.instagram.com/clinica_relance/"
-            >
-              <AiFillInstagram
-                fontSize={20}
-                className="text-green-100 md:w-7 md:h-7 "
-              />
-              <span className="sr-only">Instagram</span>
-            </a>
-          </div>
+          <SocialMedia style="w-full flex pb-4 pl-5">
+            <SocialMediaLink
+              style={`${socialMediaStyle}`}
+              url="https://api.whatsapp.com/send/?phone=5532998001512"
+              name="Whatsapp"
+              icon={
+                <IoLogoWhatsapp
+                  fontSize={20}
+                  className="text-green-100 md:w-7 md:h-7 "
+                />
+              }
+            />
+            <SocialMediaLink
+              style={`${socialMediaStyle}`}
+              url="https://www.instagram.com/clinica_relance/"
+              name="Instagram"
+              icon={
+                <AiFillInstagram
+                  fontSize={20}
+                  className="text-green-100 md:w-7 md:h-7 "
+                />
+              }
+            />
+          </SocialMedia>
         </div>
         <div className="w-full h-[420px] md:h-screen p-[2px] z-[1] relative bg-green-100 ">
           <Map />
         </div>
       </section>
     </>
-  );
+  )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await client.getSingle("location");
+  const response = await client.getSingle('location')
 
   const location = {
     image: response.data.image.url,
@@ -133,12 +109,12 @@ export const getStaticProps: GetStaticProps = async () => {
     neighborhood: prismicH.asText(response.data.neighborhood),
     number: prismicH.asText(response.data.number),
     cellphone: prismicH.asText(response.data.cellphone),
-  };
+  }
 
   return {
     props: {
       location,
     },
-    revalidate: 24 * 60 * 60, //24h
-  };
-};
+    revalidate: 24 * 60 * 60, // 24h
+  }
+}

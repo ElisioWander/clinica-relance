@@ -1,14 +1,14 @@
-import { useSinglePrismicDocument } from "@prismicio/react";
-import Link from "next/link";
+import { useSinglePrismicDocument } from '@prismicio/react'
+import Link from 'next/link'
 import * as prismicH from '@prismicio/helpers'
 
 export function OurProfessionals() {
-  let [document] = useSinglePrismicDocument("homesummary")
-    
+  const [document] = useSinglePrismicDocument('homesummary')
+
   const summary = {
     slug: document?.uid,
     content: prismicH.asText(document?.data.content),
-    image: document?.data.image.url
+    image: document?.data.image.url,
   }
 
   return (
@@ -19,10 +19,10 @@ export function OurProfessionals() {
         <div
           className="lg:h-[400px] lg:w-[400px] flex items-center justify-center "
           style={{
-            'backgroundImage': 'url("/images/ellipse-1.svg")',
-            'backgroundSize': 'contain',
-            'backgroundRepeat': 'no-repeat',
-            'backgroundPosition': 'center'
+            backgroundImage: 'url("/images/ellipse-1.svg")',
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
           }}
         >
           <img
@@ -37,15 +37,13 @@ export function OurProfessionals() {
             {summary.content}
           </p>
 
-          <Link href="/sobre" >
-            <a
-              className="w-[130px] h-10 flex items-center justify-center text-white-50 text-base font-roboto font-semibold rounded-3xl mt-7 bg-green-100 hover:bg-green-300 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white-100 "
-            >
+          <Link href="/sobre">
+            <a className="w-[130px] h-10 flex items-center justify-center text-white-50 text-base font-roboto font-semibold rounded-3xl mt-7 bg-green-100 hover:bg-green-300 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white-100 ">
               Conheça elas
             </a>
           </Link>
         </div>
       </div>
     </div>
-  );
+  )
 }

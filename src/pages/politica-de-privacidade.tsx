@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { SeoPage } from "../Components/SeoPage";
+import Link from 'next/link'
+import { SeoPage } from '../Components/SeoPage'
 
 export default function PrivacyPolicy() {
-  const paragraph = `py-2 px-2 md:px-5 text-zinc-600 text-sm md:text-base font-poppins  `;
+  const paragraph = `py-2 px-2 md:px-5 text-zinc-600 text-sm md:text-base font-poppins  `
 
   return (
     <>
@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
           <p className={`${paragraph}`}>
             A sua privacidade é importante para nós. É política da Clínica
             Relance respeitar a sua privacidade em relação a qualquer informação
-            sua que possamos coletar no site{" "}
+            sua que possamos coletar no site{' '}
             <Link href="/">
               <a
                 className="text-blue-400 hover:underline underline-offset-2"
@@ -32,7 +32,7 @@ export default function PrivacyPolicy() {
                 Clínica Relance
               </a>
             </Link>
-            , e outros sites que possuímos e operamos. <br className="mb-3" />{" "}
+            , e outros sites que possuímos e operamos. <br className="mb-3" />{' '}
             Solicitamos informações pessoais apenas quando realmente precisamos
             delas para lhe fornecer um serviço. Fazemo-lo por meios justos e
             legais, com o seu conhecimento e consentimento. Também informamos
@@ -40,17 +40,17 @@ export default function PrivacyPolicy() {
             <br className="mb-3" /> Apenas retemos as informações coletadas pelo
             tempo necessário para fornecer o serviço solicitado. Quando
             armazenamos dados, protegemos dentro de meios comercialmente
-            aceitáveis ​​para evitar perdas e roubos, bem como acesso,
-            divulgação, cópia, uso ou modificação não autorizados.{" "}
-            <br className="mb-3" /> Não compartilhamos informações de
-            identificação pessoal publicamente ou com terceiros, exceto quando
-            exigido por lei. <br className="mb-3" /> O nosso site pode ter links
-            para sites externos que não são operados por nós. Esteja ciente de
-            que não temos controle sobre o conteúdo e práticas desses sites e
-            não podemos aceitar responsabilidade por suas respectivas políticas
-            de privacidade. <br className="mb-3" /> Você é livre para recusar a
+            aceitáveis para evitar perdas e roubos, bem como acesso, divulgação,
+            cópia, uso ou modificação não autorizados. <br className="mb-3" />{' '}
+            Não compartilhamos informações de identificação pessoal publicamente
+            ou com terceiros, exceto quando exigido por lei.{' '}
+            <br className="mb-3" /> O nosso site pode ter links para sites
+            externos que não são operados por nós. Esteja ciente de que não
+            temos controle sobre o conteúdo e práticas desses sites e não
+            podemos aceitar responsabilidade por suas respectivas políticas de
+            privacidade. <br className="mb-3" /> Você é livre para recusar a
             nossa solicitação de informações pessoais, entendendo que talvez não
-            possamos fornecer alguns dos serviços desejados.{" "}
+            possamos fornecer alguns dos serviços desejados.{' '}
             <br className="mb-3" /> O uso continuado de nosso site será
             considerado como aceitação de nossas práticas em torno de Aviso de
             Privacidad e informações pessoais. Se você tiver alguma dúvida sobre
@@ -66,7 +66,7 @@ export default function PrivacyPolicy() {
           <ol className={`${paragraph} px-5 md:px-8`}>
             <li>
               1 - Não se envolver em atividades que sejam ilegais ou contrárias
-              à boa fé a à ordem pública;{" "}
+              à boa fé a à ordem pública;{' '}
             </li>
             <li>
               2 - Não difundir propaganda ou conteúdo de natureza racista,
@@ -86,12 +86,12 @@ export default function PrivacyPolicy() {
             Esperemos que esteja esclarecido e, como mencionado anteriormente,
             se houver algo que você não tem certeza se precisa ou não,
             geralmente é mais seguro deixar os cookies ativados, caso interaja
-            com um dos recursos que você usa em nosso site.{" "}
+            com um dos recursos que você usa em nosso site.{' '}
             <br className="mb-3" /> Esta política é efetiva a partir de
             July/2022.
           </p>
         </section>
       </div>
     </>
-  );
+  )
 }

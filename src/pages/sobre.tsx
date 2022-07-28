@@ -1,24 +1,27 @@
-import { GetServerSideProps } from "next";
-import { client } from "../services/prismic";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { AiFillInstagram } from "react-icons/ai";
-import { SeoPage } from "../Components/SeoPage";
-import Image from "next/image";
-import * as prismicH from "@prismicio/helpers";
+import { GetServerSideProps } from 'next'
+import { client } from '../services/prismic'
+import { IoLogoWhatsapp } from 'react-icons/io'
+import { AiFillInstagram } from 'react-icons/ai'
+import { SeoPage } from '../Components/SeoPage'
+import { SocialMedia } from '../Components/SocialMedia'
+import { SocialMediaLink } from '../Components/SocialMedia/SocialMediaLink'
+import Image from 'next/image'
+import * as prismicH from '@prismicio/helpers'
 
 type Summary = {
-  title: string;
-  name: string;
-  summary: string;
-  image: string;
-};
+  title: string
+  name: string
+  summary: string
+  image: string
+}
 
 interface AboutProps {
-  amandaSummary: Summary;
-  tamyrisSummary: Summary;
+  amandaSummary: Summary
+  tamyrisSummary: Summary
 }
 
 export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
+  const socialMediaStyle = `w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`
   return (
     <>
       <SeoPage
@@ -42,8 +45,8 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
                 className="w-[300px] h-[300px] md:w-[320px] md:h-[320px] transition-all "
                 style={{
                   backgroundImage: 'url("/images/shape-about-image.svg")',
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
+                  backgroundSize: 'contain',
+                  backgroundRepeat: 'no-repeat',
                 }}
               >
                 <div className="absolute w-[260px] h-[260px] md:w-[280px] md:h-[280px] left-10 md:left-5">
@@ -69,30 +72,30 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
                 {tamyrisSummary.summary}
               </p>
 
-              <div className="flex gap-1 p-2">
-                <a
-                  className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`}
-                  target="_blank"
-                  href="https://api.whatsapp.com/send/?phone=5532998001512"
-                >
-                  <IoLogoWhatsapp
-                    fontSize={20}
-                    className="text-green-100 md:w-7 md:h-7 "
-                  />
-                  <span className="sr-only">Whatsapp</span>
-                </a>
-                <a
-                  className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`}
-                  target="_blank"
-                  href="https://www.instagram.com/esteta_tamyrisferreira/"
-                >
-                  <AiFillInstagram
-                    fontSize={20}
-                    className="text-green-100 md:w-7 md:h-7 "
-                  />
-                  <span className="sr-only">Instagram</span>
-                </a>
-              </div>
+              <SocialMedia style="flex gap-1 p-2">
+                <SocialMediaLink
+                  style={`${socialMediaStyle}`}
+                  url="https://api.whatsapp.com/send/?phone=5532998001512"
+                  name="Whatsapp"
+                  icon={
+                    <IoLogoWhatsapp
+                      fontSize={20}
+                      className="text-green-100 md:w-7 md:h-7 "
+                    />
+                  }
+                />
+                <SocialMediaLink
+                  style={`${socialMediaStyle}`}
+                  url="https://www.instagram.com/esteta_tamyrisferreira/"
+                  name="Instagram"
+                  icon={
+                    <AiFillInstagram
+                      fontSize={20}
+                      className="text-green-100 md:w-7 md:h-7 "
+                    />
+                  }
+                />
+              </SocialMedia>
             </div>
           </section>
           <section className="py-14 flex flex-col items-center justify-center md:flex-row bg-white-300 md:animate-goAhead ">
@@ -101,8 +104,8 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
                 className="w-[300px] h-[300px] md:w-[320px] md:h-[320px] transition-all "
                 style={{
                   backgroundImage: 'url("/images/shape-about-image.svg")',
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
+                  backgroundSize: 'contain',
+                  backgroundRepeat: 'no-repeat',
                 }}
               >
                 <div className="absolute w-[260px] h-[260px] md:w-[280px] md:h-[280px] left-10 md:left-5 ">
@@ -127,60 +130,60 @@ export default function About({ amandaSummary, tamyrisSummary }: AboutProps) {
               <p className="w-full max-w-[720px] text-zinc-600 text-sm md:text-base md:text-start font-roboto leading-5 ">
                 {amandaSummary.summary}
               </p>
-              <div className="flex gap-1 p-2">
-                <a
-                  className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`}
-                  target="_blank"
-                  href="https://api.whatsapp.com/send/?phone=5532998001512"
-                >
-                  <IoLogoWhatsapp
-                    fontSize={20}
-                    className="text-green-100 md:w-7 md:h-7 "
-                  />
-                  <span className="sr-only">Whatsapp</span>
-                </a>
-                <a
-                  className={`w-9 h-9 md:w-11 md:h-11 bg-zinc-100 shadow-md rounded-md flex items-center justify-center hover:cursor-pointer scale-90 hover:brightness-90 hover:scale-100 transition-all`}
-                  target="_blank"
-                  href="https://www.instagram.com/amandaferreira_beauty/"
-                >
-                  <AiFillInstagram
-                    fontSize={20}
-                    className="text-green-100 md:w-7 md:h-7 "
-                  />
-                  <span className="sr-only">Instagram</span>
-                </a>
-              </div>
+              <SocialMedia style="flex gap-1 p-2">
+                <SocialMediaLink
+                  style={`${socialMediaStyle}`}
+                  url="https://api.whatsapp.com/send/?phone=5532998001512"
+                  name="Whatsapp"
+                  icon={
+                    <IoLogoWhatsapp
+                      fontSize={20}
+                      className="text-green-100 md:w-7 md:h-7 "
+                    />
+                  }
+                />
+                <SocialMediaLink
+                  style={`${socialMediaStyle}`}
+                  url="https://www.instagram.com/amandaferreira_beauty/"
+                  name="Instagram"
+                  icon={
+                    <AiFillInstagram
+                      fontSize={20}
+                      className="text-green-100 md:w-7 md:h-7 "
+                    />
+                  }
+                />
+              </SocialMedia>
             </div>
           </section>
         </main>
       </div>
     </>
-  );
+  )
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const summaryOne = await client.getSingle("amandasummary");
-  const summaryTwo = await client.getSingle("tamyrissummary");
+  const summaryOne = await client.getSingle('amandasummary')
+  const summaryTwo = await client.getSingle('tamyrissummary')
 
   const amandaSummary = {
     title: prismicH.asText(summaryOne.data.title),
     name: prismicH.asText(summaryOne.data.name),
     summary: prismicH.asText(summaryOne.data.summary),
     image: summaryOne.data.image.url,
-  };
+  }
 
   const tamyrisSummary = {
     title: prismicH.asText(summaryTwo.data.title),
     name: prismicH.asText(summaryTwo.data.name),
     summary: prismicH.asText(summaryTwo.data.summary),
     image: summaryTwo.data.image.url,
-  };
+  }
 
   return {
     props: {
       amandaSummary,
       tamyrisSummary,
     },
-  };
-};
+  }
+}

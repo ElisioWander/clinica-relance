@@ -1,14 +1,20 @@
-import { useRouter } from "next/router";
-import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { useRouter } from 'next/router'
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 
 type SidebarContextData = {
-  sidebarActive: boolean;
-  handleOpenSidebar: () => void;
-  handleCloseSidebar: () => void;
+  sidebarActive: boolean
+  handleOpenSidebar: () => void
+  handleCloseSidebar: () => void
 }
 
 interface SidebarContextProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 const SidebarContext = createContext({} as SidebarContextData)
@@ -20,14 +26,12 @@ export function SidebarContextProvider({ children }: SidebarContextProps) {
   useEffect(() => {
     setSidebarActive(false)
 
-    if(document.body.style.overflow === "hidden" ) {
-      document.body.style.overflow = "initial"
+    if (document.body.style.overflow === 'hidden') {
+      document.body.style.overflow = 'initial'
     }
   }, [router.asPath])
 
   function handleOpenSidebar() {
-    !sidebarActive
-
     document.body.style.overflow = !sidebarActive ? 'hidden' : 'initial'
 
     setSidebarActive(!sidebarActive)
@@ -35,11 +39,14 @@ export function SidebarContextProvider({ children }: SidebarContextProps) {
 
   function handleCloseSidebar() {
     setSidebarActive(false)
+    document.body.style.overflow = 'initial'
   }
 
   return (
-    <SidebarContext.Provider value={{ sidebarActive, handleOpenSidebar, handleCloseSidebar }} >
-      { children }
+    <SidebarContext.Provider
+      value={{ sidebarActive, handleOpenSidebar, handleCloseSidebar }}
+    >
+      {children}
     </SidebarContext.Provider>
   )
 }
